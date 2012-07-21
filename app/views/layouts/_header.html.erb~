@@ -1,11 +1,15 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "sample app", '#', id: "logo" %>
+      <%= link_to "weather app", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    '#' %></li>
-          <li><%= link_to "Help",    '#' %></li>
+	  <li><%= link_to "Home",    root_path %></li>
+	  <li><%= link_to "News", '#' %></li>
+	  <li><%= link_to "Forums", '#' %></li>
+	  <li><%= link_to "Pictures", '#' %></li>
+	  <li><%= link_to "Videos", '#' %></li>
+	  <li><%= link_to "Contests", '#' %></li>
           <li><%= link_to "Sign in", '#' %></li>
         </ul>
       </nav>
