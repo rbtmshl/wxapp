@@ -1,0 +1,6 @@
+<% provide(:title, 'Home') %>
+    <h1>Weather App</h1>
+    <p>
+      This is the home page for Robert Marshall's Weather App!
+    </p>
+

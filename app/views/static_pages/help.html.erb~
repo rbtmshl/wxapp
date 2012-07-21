@@ -1,0 +1,14 @@
+<% provide(:title, 'Help') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App | <%= yield(:title) %></title>
+  </head>
+  <body>
+    <h1>Help</h1>
+    <p>
+     Weather App help page!
+    </p>
+  </body>
+</html>
+
