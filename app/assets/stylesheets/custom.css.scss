@@ -3,9 +3,15 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-$gold: #FFCC00;
+$orange: #FFCC33;
 
 /* universal */
+
+/*
+body {
+  background: #786E50 url(cloudbg.jpg);;
+}
+*/
 
 html {
   overflow-y: scroll;
@@ -57,21 +63,20 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: $gold;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: $orange;
     text-decoration: none;
   }
 }

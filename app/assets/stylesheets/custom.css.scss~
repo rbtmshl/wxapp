@@ -3,9 +3,15 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-$gold: #FFCC00;
+$orange: #FFCC33;
 
 /* universal */
+
+/*
+body {
+  background: #786E50 url(cloudbg.jpg);;
+}
+*/
 
 html {
   overflow-y: scroll;
@@ -57,6 +63,10 @@ p {
   line-height: 1.7em;
 }
 
+li {
+  color: $orange;
+}
+
 
 /* header */
 
@@ -71,7 +81,7 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: #FFCC00;
+    color: $orange;
     text-decoration: none;
   }
 }
