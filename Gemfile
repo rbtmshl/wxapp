@@ -8,6 +8,7 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'railties','3.2.6'
+gem 'nifty-generators', '>= 0.4.0'
 gem 'geocoder'
 
 group :development, :test do
@@ -40,3 +41,5 @@ group :production do
   gem 'pg', '0.12.2'
 end
 
+
+gem "mocha", :group => :test

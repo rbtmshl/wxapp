@@ -1,4 +1,4 @@
-<% provide(:title, 'Edit Location') %>
+<% title "Edit Location" %>
 
 <%= render 'form' %>
 
