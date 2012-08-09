@@ -12,7 +12,14 @@
     </section>  
   </aside>
   <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
+  <%= render 'follow_form' if signed_in? %>
+    <% if @user.forecasts.any? %>
+      <h3>Forecasts (<%= @user.forecasts.count %>)</h3>
+      <ol class="forecasts">
+        <%= render @forecasts %>
+      </ol>
+      <%-# <%= will_paginate @microposts -%> 
+    <% end %>    
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">

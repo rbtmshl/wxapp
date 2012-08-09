@@ -1,0 +1,34 @@
+require 'spec_helper'
+
+describe "forecast pages" do
+
+  subject { page }
+
+  let(:user) { FactoryGirl.create(:user) }
+  before { sign_in user }
+
+  describe "forecast creation" do
+    before { visit root_path }
+
+    describe "with invalid information" do
+
+      it "should not create a forecast" do
+        expect { click_button "Post" }.should_not change(forecast, :count)
+      end
+
+      describe "error messages" do
+        before { click_button "Post" }
+        it { should have_content('error') } 
+      end
+    end
+
+    describe "with valid information" do
+
+      before { fill_in 'forecast_sensible', with: "Fog" }
+      it "should create a forecast" do
+        expect { click_button "Post" }.should change(forecast, :count).by(1)
+      end
+    end
+  end
+end
+

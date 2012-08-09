@@ -16,7 +16,7 @@ $orange: #FFCC33;
 
 /*
 body {
-  background: #786E50 url(cloudbg.jpg);;
+  background: #786E50 url(cloud.gif);
 }
 */
 
@@ -227,7 +227,7 @@ input, textarea, select, .uneditable-input {
 .microposts {
   list-style: none;
   margin: 10px 0 0 0;
-
+  /* background: #000000; */
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -249,5 +249,52 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+/* forecasts */
+
+.forecasts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.sensible {
+  display: block;
+}
+.hi_temp {
+  display: block;
+}
+.lo_temp {
+  display: block;
+}
+.ws {
+  display: block;
+}
+.wd {
+  display: block;
+}
+.precip_chance {
+  display: block;
+}
+.qpf {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
 
 

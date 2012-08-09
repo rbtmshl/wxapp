@@ -10,6 +10,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'railties','3.2.6'
 gem 'nifty-generators', '>= 0.4.0'
 gem 'geocoder'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

@@ -54,11 +54,19 @@ describe "User pages" do
     let(:user) { FactoryGirl.create(:user) }
     let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
+    let!(:f1) { FactoryGirl.create(:forecast, user: user, sensible: "Snow", hi_temp: 28, lo_temp: 22, ws: 12, wd: 315, precip_chance: 90, qpf: 0.75) }
+    let!(:f2) { FactoryGirl.create(:forecast, user: user, sensible: "Partly Cloudy/Wind", hi_temp: 44, lo_temp: 33, ws: 25, wd: 90, precip_chance: 10, qpf: 0.00) }
 
     before { visit user_path(user) }
 
     it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
+
+    describe "forecasts" do
+      it { should have_content(f1.content) }
+      it { should have_content(f2.content) }
+      it { should have_content(user.forecasts.count) }
+    end
 
     describe "microposts" do
       it { should have_content(m1.content) }

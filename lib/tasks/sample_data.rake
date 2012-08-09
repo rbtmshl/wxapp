@@ -3,6 +3,7 @@ namespace :db do
   task populate: :environment do
     make_users
     make_microposts
+    make_forecasts
     make_relationships
   end
 end
@@ -29,6 +30,20 @@ def make_microposts
   50.times do
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
+  end
+end
+
+def make_forecasts
+  users = User.all(limit: 10)
+  3.times do
+    sensible = "Snow"
+    hi_temp = 28
+    lo_temp = 22
+    ws = 10
+    wd = 315
+    precip_chance = 80
+    qpf = 0.50
+    users.each { |user| user.forecasts.create!(sensible: sensible, hi_temp: hi_temp, lo_temp: lo_temp, ws: ws, wd: wd, precip_chance: precip_chance, qpf: qpf) }
   end
 end
 

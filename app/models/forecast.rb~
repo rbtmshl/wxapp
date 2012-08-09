@@ -1,0 +1,8 @@
+class Forecast < ActiveRecord::Base
+  attr_accessible :hi_temp, :lo_temp, :precip_chance, :qpf, :sensible, :wd, :ws
+  belongs_to :user
+
+  validates :user_id, presence: true
+
+  default_scope order: 'forecasts.created_at DESC'
+end

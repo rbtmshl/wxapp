@@ -35,7 +35,8 @@ describe User do
   it { should respond_to(:reverse_relationships) }
   it { should respond_to(:followers) }
   it { should respond_to(:following?) }
-  it { should respond_to(:follow!) } 
+  it { should respond_to(:follow!) }
+  it { should respond_to(:forecasts) } 
 
   it { should be_valid }
   it { should_not be_admin }
@@ -157,6 +158,29 @@ describe User do
       @user.destroy
       microposts.each do |micropost|
         Micropost.find_by_id(micropost.id).should be_nil
+      end
+    end
+
+    describe "forecast associations" do
+      
+      before { @user.save } 
+      let!(:older_forecast) do
+        FactoryGirl.create(:forecast, user: @user, created_at: 1.day.ago)
+      end
+      let!(:newer_forecast) do
+	FactoryGirl.create(:forecast, user: @user, created_at: 1.hour.ago)
+      end
+
+      it "should have the right forecasts in the right order" do
+	@user.forecasts.should == [newer_forecast, older_forecast]
+      end
+
+      it "should destroy associated forecasts" do
+        forecasts = @user.forecasts
+        @user.destroy
+        forecasts.each do |forecast|
+          Forecast.find_by_id(forecast.id).should be_nil
+        end
       end
     end
     

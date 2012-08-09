@@ -14,5 +14,16 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :forecast do
+    sensible "Snow"
+    hi_temp 28
+    lo_temp 22
+    ws 12
+    wd 315
+    precip_chance 90
+    qpf 0.75
+    user
+  end
 end
 
