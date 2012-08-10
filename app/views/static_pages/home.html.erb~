@@ -23,8 +23,7 @@
   </div>
 <% else %>
   <div class="center hero-unit">
-	  <h1><center>Welcome to the Weather App</center></h1>
-    
+    <h1><center>Welcome to the Weather App</center></h1>
     <h2>
       This is the home page for the Weather App!
     </h2>

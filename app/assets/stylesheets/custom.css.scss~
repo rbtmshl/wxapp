@@ -29,7 +29,18 @@ $lightAqua: #F0FAFF;
 
 .hero-unit {
   background: $lightAqua;
-  
+  h1 {
+    font-size: 2em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  h4 {
+    font-size: 4em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
 }
 /*
 body {
