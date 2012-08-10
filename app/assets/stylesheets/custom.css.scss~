@@ -4,6 +4,7 @@
 
 $grayMediumLight: #eaeaea;
 $orange: #FFCC33;
+$lightAqua: #F0FAFF;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -14,11 +15,32 @@ $orange: #FFCC33;
 
 /* universal */
 
+.span4 {
+  margin: 0 50px 0 0;
+  h3 {
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+}
+
+.timestamp {
+  margin-bottom: 10px;
+}
+
+.hero-unit {
+  background: $lightAqua;
+  
+}
 /*
 body {
-  background: #786E50 url(cloud.gif);
+  background: #801A00;
 }
 */
+
+body {
+  background: #786E50 url(cloud_bg.gif);
+}
+
 
 html {
   overflow-y: scroll;
@@ -235,6 +257,7 @@ input, textarea, select, .uneditable-input {
 }
 .content {
   display: block;
+  margin-bottom: 5px;
 }
 .timestamp {
   color: $grayLight;
@@ -249,5 +272,53 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+/* forecasts */
+
+.forecasts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.sensible {
+  display: block;
+}
+.hi_temp {
+  display: block;
+}
+.lo_temp {
+  display: block;
+}
+.ws {
+  display: block;
+}
+.wd {
+  display: block;
+}
+.precip_chance {
+  display: block;
+}
+.qpf {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+
 
 

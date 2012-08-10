@@ -11,7 +11,7 @@
       <%= render 'shared/stats' %>
     </section>  
   </aside>
-  <div class="span8">
+  <div class="span6">
   <%= render 'follow_form' if signed_in? %>
     <% if @user.forecasts.any? %>
       <h3>Forecasts (<%= @user.forecasts.count %>)</h3>

@@ -8,31 +8,29 @@
         <%= render 'shared/stats' %>
       </section>
       <section>
+        <h3>Create a Forecast</h3>
         <%= render 'shared/forecast_form' %>
       </section>
       <section>
+        <h3>Post About the Weather</h3>
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-    <div class="span8">
-      <h3>Micropost Feed</h3>
+    <div class="span6">
+      <h3>Weather Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
   <div class="center hero-unit">
-    <h1>Welcome to the Weather App</h1>
-
+    <h1><center>Welcome to the Weather App</center></h1>
     <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
+      This is the home page for the Weather App!
     </h2>
 
     <%= link_to "Sign up now!", signup_path, 
                                 class: "btn btn-large btn-primary" %>
   </div>
 
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %> 
 
