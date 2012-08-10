@@ -28,7 +28,7 @@ $lightAqua: #F0FAFF;
 }
 
 .hero-unit {
-  background: $lightAqua;
+  background: #D5E8F6;
   h1 {
     font-size: 2em;
     letter-spacing: -2px;
@@ -39,7 +39,7 @@ $lightAqua: #F0FAFF;
     font-size: 4em;
     letter-spacing: -2px;
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
   }
 }
 /*
@@ -49,7 +49,7 @@ body {
 */
 
 body {
-  background: #786E50 url(cloud_bg.gif);
+  background: #786E50 url(cloud2.gif);
 }
 
 
