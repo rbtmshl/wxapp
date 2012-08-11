@@ -246,7 +246,12 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
+  background: #F8F8F8;
   @include box_sizing;
+}
+
+select {
+  background: transparent;
 }
 
 #error_explanation {

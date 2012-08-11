@@ -53,7 +53,7 @@ $deepRed: #801A00;
 }
 
 .userinfostuff {
-  background-image: url(form_bg_top.gif), url(form_bg_bottom.gif), url(form_bg_mid.gif);
+  background-image: url(user_info_bg_top.gif), url(user_info_bg_bottom.gif), url(user_info_bg_mid.gif);
   background-repeat: no-repeat, no-repeat, repeat-y;
   background-position: left top, left bottom, left top; 
   padding: 20px 25px 25px 25px;
@@ -246,7 +246,18 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
+  background: #F8F8F8;
   @include box_sizing;
+}
+
+.tempforecast {
+  select {
+    width: 40%;
+  }
+}
+
+select {
+  background: transparent;
 }
 
 #error_explanation {

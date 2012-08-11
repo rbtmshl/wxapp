@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808055049) do
+ActiveRecord::Schema.define(:version => 20120811020156) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120808055049) do
     t.integer  "ws"
     t.integer  "wd"
     t.integer  "precip_chance"
-    t.float    "qpf"
+    t.integer  "qpf"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
