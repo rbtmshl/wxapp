@@ -5,6 +5,7 @@
 $grayMediumLight: #eaeaea;
 $orange: #FFCC33;
 $lightAqua: #F0FAFF;
+$deepRed: #801A00;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -19,7 +20,7 @@ $lightAqua: #F0FAFF;
   margin: 0 50px 0 0;
   h3 {
     margin-bottom: 10px;
-    margin-top: 5px;
+    margin-top: 0px;
   }
 }
 
@@ -28,7 +29,7 @@ $lightAqua: #F0FAFF;
 }
 
 .hero-unit {
-  background: #E0F1FE;
+  background: $lightAqua;
   h1 {
     font-size: 2em;
     letter-spacing: -2px;
@@ -42,16 +43,34 @@ $lightAqua: #F0FAFF;
     text-align: center;
   }
 }
-/*
-body {
-  background: #801A00;
-}
-*/
 
+.formy {
+  background-image: url(form_bg_top.gif), url(form_bg_bottom.gif), url(form_bg_mid.gif);
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  background-position: left top, left bottom, left top; 
+  padding: 20px 25px 0px 25px;
+  margin-bottom: 20px;
+}
+
+.userinfostuff {
+  background-image: url(user_info_bg_top.gif), url(user_info_bg_bottom.gif), url(user_info_bg_mid.gif);
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  background-position: left top, left bottom, left top; 
+  padding: 20px 25px 25px 25px;
+  margin-bottom: 20px;
+}
+
+
+
+body {
+  background: $grayDark;
+}
+
+/*
 body {
   background: #786E50 url(cloud2.gif);
 }
-
+*/
 
 html {
   overflow-y: scroll;
@@ -162,10 +181,10 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    /* border-top: 1px solid $grayLighter; */
     &:first-child {
       border: 0;
-      padding-top: 0;
+      padding-top: 25;
     }
     span {
       display: block;
@@ -187,15 +206,18 @@ aside {
 }
 
 .stats {
+  padding-top: 10px;
   overflow: auto;
   a {
+    border: 1px solid $grayLighter;
+    border-right: 0;
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $grayLighter;
+    /*border-left: 1px solid $grayLighter;*/
     color: gray;
     &:first-child {
       padding-left: 0;
-      border: 0;
+      border-left: 0;
     }
     &:hover {
       text-decoration: none;

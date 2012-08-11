@@ -1,17 +1,19 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
-    <section>
+    <section class="userinfostuff">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+	<%= @user.name %>
       </h1>
+      <span>
+        <%= pluralize(current_user.microposts.count, "Post") %> | 
+        <%= pluralize(current_user.forecasts.count, "Forecast") %>
+      </span>
+      <%= render 'shared/stats' %>      
     </section>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>  
   </aside>
-  <div class="span8">
+  <div class="span6">
   <%= render 'follow_form' if signed_in? %>
     <% if @user.forecasts.any? %>
       <h3>Forecasts (<%= @user.forecasts.count %>)</h3>

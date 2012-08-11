@@ -1,17 +1,14 @@
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
-      <section>
+      <section class="userinfostuff">
         <%= render 'shared/user_info' %>
-      </section>
-      <section>
         <%= render 'shared/stats' %>
       </section>
-      <section>
-        <h3>Create a Forecast</h3>
+      <section class="formy">
         <%= render 'shared/forecast_form' %>
       </section>
-      <section>
+      <section class="formy">
         <h3>Post About the Weather</h3>
         <%= render 'shared/micropost_form' %>
       </section>
@@ -23,7 +20,7 @@
   </div>
 <% else %>
   <div class="center hero-unit">
-    <h1><center>Welcome to the Weather App</center></h1>
+    <h4>Welcome to the Weather App</h4>
     <h2>
       This is the home page for the Weather App!
     </h2>

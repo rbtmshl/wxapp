@@ -1,18 +1,14 @@
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
-      <section>
+      <section class="userinfostuff">
         <%= render 'shared/user_info' %>
-      </section>
-      <section>
         <%= render 'shared/stats' %>
       </section>
-      <section>
-        <h3>Create a Forecast</h3>
+      <section class="formy">
         <%= render 'shared/forecast_form' %>
       </section>
-      <section>
-        <h3>Post About the Weather</h3>
+      <section class="formy">
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
