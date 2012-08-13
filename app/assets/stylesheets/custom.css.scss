@@ -60,6 +60,45 @@ $deepRed: #801A00;
   margin-bottom: 20px;
 }
 
+.usercast {
+  h4 {
+    font-size: 1.2em;
+    letter-spacing: 0px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #585858;
+  }
+}
+
+.sensible {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.temps {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.winds {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.precipChance {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.qpf {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
 
 body {
@@ -280,6 +319,10 @@ select {
       border-bottom: 1px solid $grayLighter;
     }
   }
+  a {
+    color: $grayDark;
+    font-weight: bold;
+  }
 }
 
 /* microposts */
@@ -320,40 +363,6 @@ aside {
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
-  }
-}
-.sensible {
-  display: block;
-}
-.hi_temp {
-  display: block;
-}
-.lo_temp {
-  display: block;
-}
-.ws {
-  display: block;
-}
-.wd {
-  display: block;
-}
-.precip_chance {
-  display: block;
-}
-.qpf {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
   }
 }
 

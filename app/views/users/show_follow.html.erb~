@@ -2,8 +2,15 @@
 <div class="row">
   <aside class="span4">
     <section class="userinfostuff">
-      <%= render 'shared/user_info' %>
-      <%= render 'shared/stats' %>
+      <h1>
+        <%= gravatar_for @user %>
+	<%= @user.name %>
+      </h1>
+      <span>
+        <%= pluralize(@user.microposts.count, "Post") %> | 
+        <%= pluralize(@user.forecasts.count, "Forecast") %>
+      </span>
+      <%= render 'shared/stats' %>      
     </section>
     <section>
       <% if @users.any? %>

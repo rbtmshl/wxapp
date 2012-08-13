@@ -1,13 +1,15 @@
 <li>
-  <span class="sensible"><%= micropost.sensible %></span>
-  <span class="hi_temp"><%= micropost.hi_temp.to_s() %></span>
-  <span class="lo_temp"><%= micropost.lo_temp.to_s() %></span>
-  <span class="ws"><%= micropost.ws.to_s() %></span>
-  <span class="wd"><%= micropost.wd.to_s() %></span>
-  <span class="precip_chance"><%= micropost.precip_chance.to_s() %></span>
-  <span class="qpf"><%= micropost.qpf.to_s() %></span>
+  <span class="usercast">
+    <h4>Seattle, WA | <%= Date::DAYNAMES[Date.today().tomorrow().wday()] %>, <%= Date.today().tomorrow().to_formatted_s(:long) %></h4>  
+    <span class="conditionsPic"><%= image_tag "cloud.gif", size: "70x70" %></span>
+    <span class="sensible">  <%= forecast.sensible %></span>
+    <span class="temps"><%= forecast.hi_temp.to_s() %>&degF / <%= forecast.lo_temp.to_s() %>&degF</span>
+    <span class="winds">Winds: <%= forecast.getWindDir(forecast.wd) %> at <%= forecast.ws.to_s() %> mph</span>
+    <span class="precipChance">Chance of Precip: <%= forecast.precip_chance.to_s() %>%</span>
+    <span class="qpf">Precip. Amount: <%= forecast.precipStr(forecast.qpf) %></span>
+  </span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    Posted <%= time_ago_in_words(forecast.created_at) %> ago.
   </span>
 </li>
 
