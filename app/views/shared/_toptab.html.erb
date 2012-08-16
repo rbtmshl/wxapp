@@ -1,0 +1,48 @@
+<ul class="nav nav-tabs" id="myTab">
+  <li><a href="#posts">Posts</a></li>
+  <li><a href="#forecasts">Forecasts</a></li>
+  <li><a href="#pictures">Pictures</a></li>
+  <li><a href="#videos">Videos</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane" id="posts">
+    <h3>Weather Feed</h3>
+    <%= render 'shared/feed' %>
+  </div>
+  <div class="tab-pane" id="forecasts">
+    <h3>Forecasts</h3>
+    <%= render 'shared/ffeed' %>
+  </div>
+  <div class="tab-pane" id="pictures">...</div>
+  <div class="tab-pane" id="videos">
+    <h3>Forecasts</h3>
+    <%= render 'shared/ffeed' %>
+  </div>
+</div>
+ 
+<script>
+  
+  $('#myTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+
+  $(function() { 
+    $('a[data-toggle="tab"]').on('shown', function (e) {
+      //save the latest tab; use cookies if you like 'em better:
+      localStorage.setItem('lastTab', $(e.target).attr('id'));
+    });
+
+    //go to the latest tab, if it exists:
+    var lastTab = localStorage.getItem('lastTab');
+    if (lastTab) {
+      $('#'+ lastTab).tab('show');
+    } else {
+      $('#myTab a:first').tab('show');
+    }
+  });
+  
+
+</script>
+

@@ -1,0 +1,10 @@
+<% if @ffeed_items.any? %>
+  <ol class="forecasts">
+    <%= render partial: 'shared/ffeed_item', collection: @ffeed_items %>
+  </ol>
+  <%= will_paginate @ffeed_items %>
+<% else %>
+  </br><h5>No items to display</h5>
+<% end %>
+
+

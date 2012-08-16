@@ -1,0 +1,17 @@
+<li id="<%= ffeed_item.id %>">
+    <span class="usercast">
+      <h4>Seattle, WA | <%= Date::DAYNAMES[Date.today().tomorrow().wday()] %>, <%= Date.today().tomorrow().to_formatted_s(:long) %></h4>  
+      <span class="conditionsPic"><%= image_tag "cloud.gif", size: "70x70" %></span>
+      <span class="sensible">  <%= ffeed_item.sensible %></span>
+      <span class="temps"><%= ffeed_item.hi_temp.to_s() %>&degF / <%= ffeed_item.lo_temp.to_s() %>&degF</span>
+      <span class="winds"><%= ffeed_item.getWindDir(ffeed_item.wd) %> at <%= ffeed_item.ws.to_s() %> mph</span>
+      <span class="precipChance">Chance of Precip: <%= ffeed_item.precip_chance.to_s() %>%</span>
+      <span class="qpf">Precip. Amount: <%= ffeed_item.precipStr(ffeed_item.qpf) %></span>
+    </span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(ffeed_item.created_at) %> ago by <%= link_to ffeed_item.user.name, ffeed_item.user %>
+    </span>
+
+</li>
+
+

@@ -24,6 +24,10 @@ class Forecast < ActiveRecord::Base
     return "N"
   end
 
+  def content
+    return "This is a forecast"
+  end
+
   def precipStr(int)
     pCat = [1, 2, 3, 4, 5, 6, 7]
     pStr = ["0.00\" or trace", "0.01\" - 0.24\"", "0.25\" - 0.49\"", "0.50\" - 0.74\"", "0.75\" - 0.99\"", "1.00\" - 1.50\"", "1.50\" - 1.99\"", "2.00\" +"]
