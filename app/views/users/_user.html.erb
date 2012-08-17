@@ -1,9 +1,12 @@
 <li>
-  <%= gravatar_for user, size: 52 %>
-  <%= link_to user.name, user %>
+  <%= link_to gravatar_for(user), user %>
+  <%= link_to user.name, user, class: "shitfucker", title: user.name, "data-content" => (pluralize(user.microposts.count, "Post")+" | "+pluralize(user.forecasts.count, "Forecast")+" | "+pluralize(user.followers.count, "Follower")+" | Following "+user.followed_users.count.to_s)%>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
 </li>
 
+<script>
+  $('.shitfucker').popover({ html : true });
+</script>

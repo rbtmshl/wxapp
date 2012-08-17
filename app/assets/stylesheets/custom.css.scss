@@ -46,6 +46,10 @@ $deepRed: #801A00;
   margin: 0;
 }
 
+.carousel-inner {
+  align: center;
+}
+
 .formy {
   background-image: url(form_bg_top.gif), url(form_bg_bottom.gif), url(form_bg_mid.gif);
   background-repeat: no-repeat, no-repeat, repeat-y;

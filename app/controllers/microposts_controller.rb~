@@ -3,13 +3,15 @@ class MicropostsController < ApplicationController
   before_filter :correct_user,   only: :destroy
   
   def create
+    store_location
     @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to root_path
+      redirect_back_or(root_path)
     else
       @feed_items = []
-      render 'new'
+      flash[:error] = "Micropost content cannot be blank. You IDIOT!"
+      redirect_back_or(root_path)
     end
   end
 

@@ -5,7 +5,9 @@
         <%= render 'shared/user_info' %>
         <%= render 'shared/stats' %>
       </section>
-
+      <section class="formy">
+        <%= render 'shared/forecast_form' %>
+      </section>
       <section class="formy">
         <%= render 'shared/micropost_form' %>
       </section>
@@ -20,7 +22,7 @@
     <h2>
       This is the home page for the Weather App!
     </h2>
-
+    <%= render 'shared/_carousel' %>
     <%= link_to "Sign up now!", signup_path, 
                                 class: "btn btn-large btn-primary" %>
   </div>

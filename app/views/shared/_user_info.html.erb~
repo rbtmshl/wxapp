@@ -6,10 +6,7 @@
 </a>
 
 <span>
-  <%= link_to "View My Profile", current_user %>
-</span>
-<span>
-  <%= pluralize(current_user.microposts.count, "Post") %> | 
+  <%= pluralize(current_user.microposts.count, "Post") %> 
   <%= pluralize(current_user.forecasts.count, "Forecast") %>
 </span>
 

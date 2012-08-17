@@ -9,9 +9,13 @@
       <span class="qpf">Precip. Amount: <%= ffeed_item.precipStr(ffeed_item.qpf) %></span>
     </span>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(ffeed_item.created_at) %> ago by <%= link_to ffeed_item.user.name, ffeed_item.user %>.
+      Posted <%= time_ago_in_words(ffeed_item.created_at) %> ago by 
+      <strong><%= link_to ffeed_item.user.name, ffeed_item.user %></strong>
     </span>
-
 </li>
+    
+<script>
+  $('.shitfucker').popover({ html : true });
+</script>
 
 

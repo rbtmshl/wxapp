@@ -7,10 +7,16 @@
 	<%= @user.name %>
       </h1>
       <span>
-        <%= pluralize(current_user.microposts.count, "Post") %> | 
-        <%= pluralize(current_user.forecasts.count, "Forecast") %>
+        <%= pluralize(@user.microposts.count, "Post") %> | 
+        <%= pluralize(@user.forecasts.count, "Forecast") %>
       </span>
       <%= render 'shared/stats' %>      
+    </section>
+    <section class="formy">
+      <%= render 'shared/forecast_form' %>
+    </section>
+    <section class="formy">
+      <%= render 'shared/micropost_form' %>
     </section>
   </aside>
   <div class="span6">

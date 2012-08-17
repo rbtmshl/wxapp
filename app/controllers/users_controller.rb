@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
     @forecasts = @user.forecasts.paginate(page: params[:page])
+    if signed_in?
+      @micropost  = current_user.microposts.build
+      @forecast  = current_user.forecasts.build
+    end
   end
 
   def new

@@ -12,6 +12,14 @@
       </span>
       <%= render 'shared/stats' %>      
     </section>
+    <% if current_user?(@user) %>
+      <section class="formy">
+        <%= render 'shared/forecast_form' %>
+      </section>
+      <section class="formy">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    <% end %>
   </aside>
   <div class="span6">
   <%= render 'follow_form' if signed_in? %>

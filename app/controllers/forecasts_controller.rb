@@ -9,7 +9,8 @@ class ForecastsController < ApplicationController
       redirect_to root_path
     else
       @feed_items = []
-      render 'static_pages/home'
+      flash[:error] = "All forecast fields must be filled, you fucktard!"
+      redirect_to root_path
     end
   end
 
