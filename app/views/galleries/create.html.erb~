@@ -1,0 +1,5 @@
+<aside class="span4">
+  <section class="formy">
+    <%= render 'shared/gallery_form' %>
+  </section>
+</aside>

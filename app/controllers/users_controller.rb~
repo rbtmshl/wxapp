@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
     @forecasts = @user.forecasts.paginate(page: params[:page])
+    if signed_in?
+      @micropost  = current_user.microposts.build
+      @forecast  = current_user.forecasts.build
+    end
   end
 
   def new
@@ -62,8 +66,11 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
-  
-   
+
+  def head_honcho
+      redirect_to(root_path) unless current_user.admin?
+  end 
+     
   private
 
     def correct_user

@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
       redirect_to root_path
     else
       @feed_items = []
-      flash[:error] = "Micropost content cannot be blank. You IDIOT!"
+      flash[:error] = "Micropost content cannot be blank!"
       redirect_to root_path
     end
   end

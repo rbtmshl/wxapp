@@ -1,0 +1,11 @@
+<li>
+  <span class="content">Name: <%= pictograph.name %></span>
+  <span class="content">Description: <%= pictograph.description %></span>
+  <span class="timestamp">
+    Uploaded <%= time_ago_in_words(pictograph.created_at) %> ago by <strong><%= link_to ffeed_item.user.name, ffeed_item.user, class: "shitfucker", title: ffeed_item.user.name, "data-content" => (pluralize(ffeed_item.user.microposts.count, "Post")+" | "+pluralize(ffeed_item.user.forecasts.count, "Forecast")+" | "+pluralize(ffeed_item.user.followers.count, "Follower")+" | Following "+ffeed_item.user.followed_users.count.to_s)%></strong>
+  </span>
+</li>
+    
+<script>
+  $('.shitfucker').popover({ html : true });
+</script>

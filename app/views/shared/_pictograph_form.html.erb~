@@ -1,0 +1,17 @@
+<%= form_for(@pictograph) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label "Title" %>
+    <%= f.text_field :name, placeholder: "Picture Title" %>
+  </div>
+  <div class="field">
+    <%= f.label "Description" %>
+    <%= f.text_area :description, placeholder: "Enter picture description here!" %>
+  </div>
+  <div>
+    <%= f.label "Select a Gallery" %>
+    
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+

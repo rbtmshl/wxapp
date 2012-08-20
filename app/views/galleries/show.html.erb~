@@ -1,0 +1,5 @@
+<% provide(:title, @gallery.name) %>
+<h3><%= @gallery.name %></h3>
+
+
+

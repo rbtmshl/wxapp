@@ -1,0 +1,9 @@
+<% provide(:title, @gallery.name) %>
+<h3><%= @gallery.name %></h3>
+<% if @gallery.pictographs.any? %>
+  <ol class="microposts">
+    <%= render @pictographs %>
+  </ol>
+  <%= will_paginate @pictographs %>
+<% end %>
+

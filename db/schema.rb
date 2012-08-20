@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120811020156) do
+ActiveRecord::Schema.define(:version => 20120820102606) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20120811020156) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "feed_stuffs", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "feed_stuffs", ["user_id", "created_at"], :name => "index_feed_stuffs_on_user_id_and_created_at"
 
   create_table "forecasts", :force => true do |t|
     t.integer  "user_id"
@@ -40,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20120811020156) do
   end
 
   add_index "forecasts", ["user_id", "created_at"], :name => "index_forecasts_on_user_id_and_created_at"
+
+  create_table "galleries", :force => true do |t|
+    t.string   "name"
+    t.integer  "gallery_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "address"
@@ -57,6 +72,18 @@ ActiveRecord::Schema.define(:version => 20120811020156) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "pictographs", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.integer  "gallery_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "pictographs", ["gallery_id", "created_at"], :name => "index_pictographs_on_gallery_id_and_created_at"
+  add_index "pictographs", ["user_id", "created_at"], :name => "index_pictographs_on_user_id_and_created_at"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"

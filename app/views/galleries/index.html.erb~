@@ -1,0 +1,15 @@
+<% provide(:title, 'Galleries') %>
+<h1>Galleries</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @galleries %>
+</ul>
+
+<%= will_paginate %>
+
+<section>
+  <%= render 'shared/micropost_form' %>
+</section>
+

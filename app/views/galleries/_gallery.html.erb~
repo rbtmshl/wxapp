@@ -1,0 +1,7 @@
+<li>
+
+  <span class="content"><%= gallery.name %></span>
+
+</li>
+
+
