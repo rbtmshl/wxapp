@@ -1,4 +1,4 @@
-</br></br>
+</br>
 <aside>
   <div class="row">
     <div class="span5">
@@ -15,7 +15,7 @@
           </div>
           <div>
             <%= f.label "Select a Gallery" %>
-            <%= f.select :gallery_id, [["Sunset/Sunrise", 1], ["Clouds", 2], ["Snow", 3], ["Rain", 4]] %>
+	    <%= f.select :gallery_id, @galleries, :name %>
           </div>
           <div>
             <%= f.label "Choose picture file" %>
