@@ -1,17 +1,40 @@
 class PictographsController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :admin_user,   only: :destroy
+
+  def new
+    @pictograph = Pictograph.new
+  end
 
   def create
     @pictograph = current_user.pictographs.build(params[:pictograph])
     if @pictograph.save
       flash[:success] = "Picture Uploaded!"
-      redirect_to root_url
+      redirect_to @pictograph
     else
-      render 'shared/error_messages'
+      render 'new'
     end
   end
 
-  def destroy
+  def show
+    @pictograph = Pictograph.find(params[:id])
   end
+
+  def destroy
+    Pictograph.find(params[:id]).destroy
+    redirect_to root_path
+  end
+
+
+  private
+
+  def correct_user
+    @pictograph = current_user.pictographs.find_by_id(params[:id])
+    redirect_to root_path if @pictograph.nil? unless current_user.admin?
+  end  
+
+  def admin_user
+      redirect_to(root_path) unless current_user.admin?
+  end 
 end
 

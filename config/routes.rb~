@@ -11,8 +11,12 @@ Wxapp::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :forecasts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :galleries, only: [:create, :show]
-  resources :pictographs
+  resources :galleries
+  resources :pictographs do
+    member do
+      get :image
+    end
+  end
 
   root to: 'static_pages#home'
 
@@ -27,6 +31,7 @@ Wxapp::Application.routes.draw do
 
   match '/newgallery', to: 'galleries#create'
   match '/pics', to: 'galleries#index'
+  match '/uploadpic', to: 'pictographs#create'
   
 
   # The priority is based upon order of creation:

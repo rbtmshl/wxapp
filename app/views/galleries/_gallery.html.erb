@@ -1,6 +1,13 @@
 <li>
 
-  <span class="content"><%= link_to gallery.name, gallery %></span>
+  <span class="content"><%= link_to (gallery.name + " (" + gallery.pictographs.count.to_s + ")"), gallery %></span>
+  <% if gallery.pictographs.any? %>
+    <% if gallery.pictographs.count > 3 %>
+      <%= render gallery.pictographs[gallery.pictographs.count-3,gallery.pictographs.count-1] %>
+    <% else %>
+      <%= render gallery.pictographs %>
+    <% end %>
+  <% end %>
 
 </li>
 

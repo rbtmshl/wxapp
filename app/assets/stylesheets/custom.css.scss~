@@ -46,8 +46,12 @@ $deepRed: #801A00;
   margin: 0;
 }
 
-.carousel {
-  background: black;
+ul {
+  list-style: none;
+}
+
+.carousel-inner {
+  align: center;
 }
 
 .formy {

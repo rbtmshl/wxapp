@@ -1,5 +1,8 @@
 <% provide(:title, @gallery.name) %>
-<h3><%= @gallery.name %></h3>
-
-
-
+<div class="row">
+	<h3><%= @gallery.name %> (<%= @gallery.pictographs.count %>) </h3></br>
+  <% if @gallery.pictographs.any? %>
+    <%= render @pictographs %>
+    <%= will_paginate @pictographs %>
+  <% end %>
+</div>

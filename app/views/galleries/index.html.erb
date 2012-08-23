@@ -1,6 +1,15 @@
 <% provide(:title, 'Galleries') %>
-<h1>Galleries</h1>
 
+<div class="row">
+  <div class="span8">
+    <h1>Photo Galleries</h1>
+  </div>
+  <div class="span2">
+    <a class="btn btn-large btn-info" href="/uploadpic">
+      Upload Photo
+    </a>
+  </div>
+</div>
 <%= will_paginate %>
 
 <ul class="users">
@@ -9,7 +18,4 @@
 
 <%= will_paginate %>
 
-<section>
-  <%= render 'shared/pictograph_form' %>
-</section>
 

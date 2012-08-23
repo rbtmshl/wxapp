@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820102606) do
+ActiveRecord::Schema.define(:version => 20120820214600) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120820102606) do
     t.integer  "gallery_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
   end
 
   add_index "pictographs", ["gallery_id", "created_at"], :name => "index_pictographs_on_gallery_id_and_created_at"
