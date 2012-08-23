@@ -12,7 +12,7 @@ gem 'nifty-generators', '>= 0.4.0'
 gem 'geocoder'
 gem 'nokogiri'
 gem "carrierwave"
-gem "minimagick"
+gem "mini_magick"
 
 
 group :development, :test do
