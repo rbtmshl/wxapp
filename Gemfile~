@@ -13,8 +13,6 @@ gem 'geocoder'
 gem 'nokogiri'
 gem "carrierwave"
 gem "mini_magick"
-gem "aws-s3"
-
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
