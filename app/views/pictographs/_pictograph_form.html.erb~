@@ -1,0 +1,29 @@
+</br>
+<aside>
+  <div class="row">
+    <div class="span5">
+      <div class="span4 offset1">
+        <%= form_for(pictograph, html: { multipart: true } ) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+            <%= f.label "Title" %>
+            <%= f.text_field :name, placeholder: "Picture Title" %>
+          </div>
+          <div class="field">
+            <%= f.label "Description" %>
+            <%= f.text_area :description, placeholder: "Enter picture description here!" %>
+          </div>
+          <div>
+            <%= f.label "Select a Gallery" %>
+            <%= f.select :gallery_id, [["Sunset/Sunrise", 1], ["Clouds", 2], ["Snow", 3], ["Rain", 4]] %>
+          </div>
+          <div>
+            <%= f.label "Choose picture file" %>
+            <%= f.file_field :image %>
+          </div>
+          <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</aside>

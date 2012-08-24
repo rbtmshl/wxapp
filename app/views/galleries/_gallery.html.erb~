@@ -2,8 +2,8 @@
 
   <span class="content"><%= link_to (gallery.name + " (" + gallery.pictographs.count.to_s + ")"), gallery %></span>
   <% if gallery.pictographs.any? %>
-    <% if gallery.pictographs.count > 4 %>
-      <%= render gallery.pictographs[gallery.pictographs.count-3,gallery.pictographs.count-1] %>
+    <% if (gallery.pictographs.count >= 4) %>
+      <%= render gallery.pictographs[gallery.pictographs.count-2,gallery.pictographs.count] %>
     <% else %>
       <%= render gallery.pictographs %>
     <% end %>
