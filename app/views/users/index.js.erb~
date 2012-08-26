@@ -1,0 +1,1 @@
+$("#usurp").html("<%= escape_javascript(render("userp")) %>");

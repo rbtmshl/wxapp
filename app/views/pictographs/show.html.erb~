@@ -1,17 +1,19 @@
 <li>
-  <span class="content"><h1><%= @pictograph.name %></h1></span>
+  <span class="content"><h3><%= @pictograph.name %></h3></span>
   <span class="content"><%= image_tag @pictograph.image_url.to_s %></span>
   <span class="content">Description: <%= @pictograph.description %></span>
   <span class="timestamp">
     Uploaded <%= time_ago_in_words(@pictograph.created_at) %> ago by <strong><%= link_to @pictograph.user.name, @pictograph.user, class: "shitfucker", title: @pictograph.user.name, "data-content" => (pluralize(@pictograph.user.microposts.count, "Post")+" | "+pluralize(@pictograph.user.forecasts.count, "Forecast")+" | "+pluralize(@pictograph.user.followers.count, "Follower")+" | Following "+@pictograph.user.followed_users.count.to_s)%></strong>
   </span>
   <span>
+  <% if signed_in %>
     <% if current_user.admin? | (current_user == @pictograph.user) %>
       </br></br>
       <%= link_to "Delete Picture", @pictograph, method: :delete,
                                      data: { confirm: "Are you sure?" },
                                      title: @pictograph.name %>			     
     <% end %>
+  <% end %>
   </span>    
 </li>
     

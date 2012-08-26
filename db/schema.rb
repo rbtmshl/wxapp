@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820214600) do
+ActiveRecord::Schema.define(:version => 20120825032722) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20120820214600) do
   end
 
   add_index "forecasts", ["user_id", "created_at"], :name => "index_forecasts_on_user_id_and_created_at"
+
+  create_table "forums", :force => true do |t|
+    t.string   "name"
+    t.integer  "forum_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "galleries", :force => true do |t|
     t.string   "name"

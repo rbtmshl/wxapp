@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  before_filter :signed_in_user,     only: :create
+  # before_filter :signed_in_user,     only: :create
   before_filter :admin_user,     only: :create
 
   def create
@@ -14,6 +14,7 @@ class GalleriesController < ApplicationController
 
   def index
     @galleries = Gallery.paginate(page: params[:page])
+    @pictograph = current_user.pictographs.build if signed_in?
   end
 
   def show

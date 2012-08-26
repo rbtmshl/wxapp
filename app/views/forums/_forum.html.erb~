@@ -1,0 +1,15 @@
+<li>
+
+  <span class="content"><%= link_to (forum.name), forum %></span>
+  <% if gallery.pictographs.any? %>
+    <% if (gallery.pictographs.count >= 4) %>
+      <%= render gallery.pictographs[gallery.pictographs.count-3,gallery.pictographs.count-1] %>
+    <% else %>
+      <%= render gallery.pictographs %>
+    <% end %>
+  <% end %>
+
+</li>
+
+
+

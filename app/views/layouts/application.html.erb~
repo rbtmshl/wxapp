@@ -4,6 +4,7 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>    
   </head>
@@ -13,7 +14,7 @@
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <div class="center hero-unit">
+      <div class="hero-unit">
 	      <%= yield %>
       </div>
       <%= render 'layouts/footer' %>

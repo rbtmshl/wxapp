@@ -1,0 +1,17 @@
+<% provide(:title, 'Forums') %>
+
+<div class="row">
+  <div class="span8">
+    <h1>Forums</h1>
+  </div>
+</div>
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @forums %>
+</ul>
+
+<%= will_paginate %>
+
+
+

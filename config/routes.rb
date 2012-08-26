@@ -12,6 +12,7 @@ Wxapp::Application.routes.draw do
   resources :forecasts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :galleries
+  resources :forums
   resources :pictographs do
     member do
       get :image
@@ -32,6 +33,8 @@ Wxapp::Application.routes.draw do
   match '/newgallery', to: 'galleries#create'
   match '/pics', to: 'galleries#index'
   match '/uploadpic', to: 'pictographs#new'
+
+  match '/newforum', to: 'forums#new'
   
 
   # The priority is based upon order of creation:
