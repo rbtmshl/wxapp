@@ -25,7 +25,7 @@ def make_users
   adminn.toggle!(:admin)
 
   99.times do |n|
-    name  = "lil_n00b#{n+1}"
+    name  = "weatherNerd#{n+1}"
     email = "example-#{n+1}@railstutorial.org"
     password  = "password"
     User.create!(name:     name,
@@ -60,8 +60,8 @@ end
 def make_relationships
   users = User.all
   user  = users.first
-  followed_users = users[2..40]
-  followers      = users[2..50]
+  followed_users = users[1..40]
+  followers      = users[1..50]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
 end

@@ -1,7 +1,7 @@
 <li>
   <%= link_to gravatar_for(user), user %>
   <%= link_to user.name, user, class: "shitfucker", title: user.name, "data-content" => (pluralize(user.microposts.count, "Post")+" | "+pluralize(user.forecasts.count, "Forecast")+" | "+pluralize(user.followers.count, "Follower")+" | Following "+user.followed_users.count.to_s)%>
-  <% if current_user.admin? && !current_user?(user) %>
+  <% if current_user.admin? && !current_user?(user) && !user.admin %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
