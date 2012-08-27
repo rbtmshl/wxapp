@@ -11,7 +11,7 @@
           </div>
           <div>
             <%= f.label "Select a Parent Forum" %>
-            <%= f.select :forum_id, [["Regional Forums", 1], ["Main Forums", 2], ["Non-Weather Gabber", 3], ["Buy, Sell, Trade", 4]] %>
+            <%= f.select :forum_id, [["Main Forums", 1], ["Regional Forums", 2], ["Event Forums", 3]] %>
           </div>
           <%= f.submit "Create Subforum", class: "btn btn-large btn-primary" %>
         <% end %>

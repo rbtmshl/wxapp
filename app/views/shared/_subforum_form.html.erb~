@@ -1,8 +1,8 @@
 </br>
 <aside>
   <div class="row">
-    <div class="span4">
-      <div class="span4">
+    <div class="span5">
+      <div class="span4 offset1">
         <%= form_for(@subforum, html: { multipart: true } ) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <div class="field">
@@ -11,7 +11,7 @@
           </div>
           <div>
             <%= f.label "Select a Parent Forum" %>
-            <%= f.select :forum_id, [["Regional Forums", 1], ["Main Forums", 2], ["Non-Weather Gabber", 3], ["Buy, Sell, Trade", 4]] %>
+            <%= f.select :forum_id, [["Regional Forums", 2], ["Main Forums", 1], ["Event Forums", 3]] %>
           </div>
           <%= f.submit "Create Subforum", class: "btn btn-large btn-primary" %>
         <% end %>
