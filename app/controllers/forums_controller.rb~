@@ -12,7 +12,6 @@ class ForumsController < ApplicationController
       redirect_to(root_path)
       flash[:success] = "Forum Created!"
     else
-     flash[:error] = "Whoops!"
      render 'new' 
     end
   end
@@ -23,6 +22,7 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
+    @subforums = @forum.subforums.paginate(page: params[:page])
     # @pictographs = @gallery.pictographs.paginate(page: params[:page])
   end
 

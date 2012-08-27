@@ -11,14 +11,17 @@ Wxapp::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :forecasts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  
   resources :galleries
-  resources :forums
   resources :pictographs do
     member do
       get :image
     end
   end
 
+  resources :forums
+  resources :subforums
+  
   root to: 'static_pages#home'
 
   match '/signup',  to: 'users#new'
@@ -35,6 +38,7 @@ Wxapp::Application.routes.draw do
   match '/uploadpic', to: 'pictographs#new'
 
   match '/newforum', to: 'forums#new'
+  match '/newsubforum', to: 'subforums#new'
   
 
   # The priority is based upon order of creation:

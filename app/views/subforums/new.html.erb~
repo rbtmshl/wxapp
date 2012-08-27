@@ -1,0 +1,10 @@
+<h1>Create a Subforum</h1>
+
+<div class="row">
+  <aside class="span8">
+    <section class="formy">
+      <%= render 'shared/subforum_form' %>
+    </section>
+  </aside>
+</div>
+

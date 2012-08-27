@@ -22,6 +22,7 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
+    @subforums = @forum.subforums.paginate(page: params[:page], per_page: 200)
     # @pictographs = @gallery.pictographs.paginate(page: params[:page])
   end
 

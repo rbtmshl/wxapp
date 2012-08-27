@@ -1,7 +1,7 @@
 
 <span class="content"><h3><%= @forum.name %> (<%= @forum.subforums.count %>) </h3></span>
 <div class="row">
-  <div class="span8">
+  <div class="span6">
     <% if @forum.subforums.any? %>
       <ul class="subforumlist">
         <%= render @subforums %>
