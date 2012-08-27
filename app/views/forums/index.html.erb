@@ -2,16 +2,11 @@
 
 <div class="row">
   <div class="span8">
-    <h1>Forums</h1>
+    <h1>Forums</h1>  
+    <ul class="subforumlist">
+      <%= render @forums %>
+    </ul>
   </div>
 </div>
-<%= will_paginate %>
-
-<ul class="users">
-  <%= render @forums %>
-</ul>
-
-<%= will_paginate %>
-
 
 

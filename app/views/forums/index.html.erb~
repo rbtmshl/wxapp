@@ -1,1 +1,12 @@
-<h1>Hello</h1>
+<% provide(:title, 'Forums') %>
+
+<div class="row">
+  <div class="span8">
+    <h3>Forums</h3>  
+    <ul class="subforumlist">
+      <%= render @forums %>
+    </ul>
+  </div>
+</div>
+
+

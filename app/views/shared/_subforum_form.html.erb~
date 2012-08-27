@@ -1,0 +1,22 @@
+</br>
+<aside>
+  <div class="row">
+    <div class="span4">
+      <div class="span4">
+        <%= form_for(@subforum, html: { multipart: true } ) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+            <%= f.label "Name" %>
+            <%= f.text_field :name, placeholder: "Subforum Name" %>
+          </div>
+          <div>
+            <%= f.label "Select a Parent Forum" %>
+            <%= f.select :forum_id, [["Regional Forums", 1], ["Main Forums", 2], ["Non-Weather Gabber", 3], ["Buy, Sell, Trade", 4]] %>
+          </div>
+          <%= f.submit "Create Subforum", class: "btn btn-large btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</aside>
+
