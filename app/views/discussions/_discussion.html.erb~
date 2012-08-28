@@ -1,0 +1,10 @@
+<li>
+
+  <span class="content"><%= link_to (discussion.name), subforum %></span>
+
+</li>
+
+
+
+
+

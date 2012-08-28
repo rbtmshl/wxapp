@@ -38,6 +38,7 @@ Wxapp::Application.routes.draw do
   match '/uploadpic', to: 'pictographs#new'
 
   match '/newforum', to: 'forums#new'
+  match '/newsubforum', to: 'subforums#new'
   
 
   # The priority is based upon order of creation:

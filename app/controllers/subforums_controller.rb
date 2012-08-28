@@ -19,7 +19,8 @@ class SubforumsController < ApplicationController
   
   def show
     @subforum = Subforum.find(params[:id])
-    # @threads = @subforum.threads.paginate(page: params[:page])
+    @discussion  = @subforum.discussions.build
+    @discussions = @subforum.discussions.paginate(page: params[:page])
   end
 
   private

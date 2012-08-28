@@ -1,13 +1,11 @@
-<% provide(:title, 'All users') %>
-<% javascript :defaults, 'endless_page' %>
+<% provide(:title, 'All Users') %>
+<h1>All Users (<%= @users.all.count.to_s %>) </h1>
 
-<h1>All users</h1>
+<%= will_paginate %>
 
 <ul class="users">
-  <div id="userp">
-    <%= render @users %>
-  </div>
+  <%= render @users %>
 </ul>
 
-<p id="loading">Loading more page results...</p>
+<%= will_paginate %>
 

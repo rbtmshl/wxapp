@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826204310) do
+ActiveRecord::Schema.define(:version => 20120827021037) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(:version => 20120826204310) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "discussions", :force => true do |t|
+    t.string   "opencomment"
+    t.string   "name"
+    t.integer  "forum_id"
+    t.integer  "subforum_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "discussions", ["forum_id", "subforum_id", "updated_at"], :name => "index_discussions_on_forum_id_and_subforum_id_and_updated_at"
+  add_index "discussions", ["user_id", "updated_at"], :name => "index_discussions_on_user_id_and_updated_at"
 
   create_table "feed_stuffs", :force => true do |t|
     t.integer  "user_id"

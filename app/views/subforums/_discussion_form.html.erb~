@@ -1,0 +1,17 @@
+<%= form_for(@discussion) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <h3>Create a New Thread</h3>
+  <aside>
+  <div class="field">
+    <%= f.label "Title" %>
+    <%= f.text_field :name, placeholder: "Thread Title..." %>
+  </div>
+  <div class="field">
+    <%= f.label "Comment" %>
+    <%= f.text_area :opencomment, placeholder: "Opening comment for discussion" %>
+  </div>
+
+  <%= f.submit "Create Thread", class: "btn btn-primary" %>
+<% end %>
+</aside>
+

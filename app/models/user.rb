@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :forecasts, dependent: :destroy
   has_many :pictographs, dependent: :destroy
+  has_many :discussions, dependent: :destroy
   
 
   before_save { |user| user.email = email.downcase }

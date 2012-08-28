@@ -10,7 +10,7 @@ class SubforumsController < ApplicationController
     @subforum = Subforum.new(params[:subforum])
     if @subforum.save
       flash[:success] = "Subforum Created!"
-      render root_path
+      redirect_to forums_path
     else
       render 'new'
       flash[:error] = "Something went awry!"
@@ -19,7 +19,8 @@ class SubforumsController < ApplicationController
   
   def show
     @subforum = Subforum.find(params[:id])
-    # @threads = @subforum.threads.paginate(page: params[:page])
+    @discussion  = current_user.discussions.build
+    @discussions = @subforum.discussions.paginate(page: params[:page])
   end
 
   private

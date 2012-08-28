@@ -1,0 +1,4 @@
+<h3><%= @discussion.name %></h3>
+<ul class="subforumlist">
+	<%= @discussion.opencomment %> started by <%= @discussion.user %>
+</ul>

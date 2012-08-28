@@ -18,7 +18,7 @@
       </button>
       <div id="newthread" class="collapse out">
         <section class="formy yo">
-          <%= render 'discussion_form' %>
+          <%= render 'shared/discussion_form' %>
         </section>
       </div>
     <% end %>
