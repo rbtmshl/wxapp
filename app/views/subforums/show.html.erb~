@@ -1,7 +1,7 @@
 <% provide(:title, @subforum.name) %>
 
 <div class="row">
-  <aside class="span6">
+  <aside class="span5">
   <h3><%= @subforum.name %> (<%= @subforum.discussions.count.to_s %>) </h3>
   <% if @subforum.discussions.any? %>
     <ul class="subforumlist">
@@ -11,14 +11,14 @@
       <p>No threads to display.</p>
     <% end %>
   </aside>
-  <div class="span4">
+  <div class="span4 offset1">
     <% if signed_in? %>
       <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#newthread">
         New Thread
       </button>
       <div id="newthread" class="collapse out">
         <section class="formy yo">
-          <%= render 'shared/discussion_form' %>
+          <%= render 'discussion_form' %>
         </section>
       </div>
     <% end %>

@@ -4,8 +4,8 @@ class Discussion < ActiveRecord::Base
   belongs_to :user
 
   validates :user_id, presence: true
-  # validates :subforum_id, presence: true
-  validates :name, presence: true, length: { maximum: 80, minimum: 3 }
+  validates :subforum_id, presence: true
+  validates :name, presence: true, length: { maximum: 120, minimum: 3 }
   validates :opencomment, presence: true, length: { maximum: 2000 }
 
   default_scope order: 'discussions.updated_at DESC'

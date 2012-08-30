@@ -1,2 +1,3 @@
-<span><%= link_to (image_tag pictograph.image_url(:thumb).to_s), pictograph %></span></br>
-<span><strong>pictograph.name</strong></span></br>
+<% require "mini-magick" %>
+
+<%= link_to (image_tag pictograph.image_url(:thumb).to_s.resize_to_fill(100, 100)), pictograph %>

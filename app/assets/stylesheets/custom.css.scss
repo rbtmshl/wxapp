@@ -369,7 +369,7 @@ select {
 
 .subforumlist {
   list-style: none;
-  margin: 0 0 0 25px;
+  margin: 0 0 0 15px;
   li {
     overflow: auto;
     padding: 5px 0;
@@ -379,6 +379,13 @@ select {
   }
 }
 
+.opencom {
+  background: #CBCACA;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  
+}
 
 /* Galleries */
 
@@ -398,6 +405,40 @@ select {
     font-weight: bold;
   }
 }
+
+.polaroid {
+  position: relative;
+}
+ 
+.polaroid img {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  margin: 0 10px 10px 0;
+}
+ 
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  color: #888;
+}
+
+.polaroidbig {
+  position: relative;
+}
+ 
+.polaroidbig img {
+  border: 10px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  margin: 10px 0 5px 0;
+}
+
 
 
 /* microposts */

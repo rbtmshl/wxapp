@@ -10,10 +10,10 @@ class DiscussionsController < ApplicationController
     @discussion = current_user.discussions.build(params[:discussion])
     if @discussion.save
       flash[:success] = "Thread created!"
-      redirect_to forums_path
+      redirect_to @discussion.subforum
     else
-      render 'new'
       flash[:error] = "Something went awry!"
+      redirect_to @discussion.subforum
     end
   end
 

@@ -1,4 +1,15 @@
-<h3><%= @discussion.name %></h3>
-<ul class="subforumlist">
-	<%= @discussion.opencomment %> started by <%= @discussion.user %>
+<h3><%= @discussion.name %></br></br></h3>
+<ul class="subforumlist opencom">
+<div class="row">
+  <div class="span2">
+    <span class="user"><%= link_to @discussion.user.name, @discussion.user %></span>
+    <span class="user"><%= link_to gravatar_for(@discussion.user), @discussion.user, size: 30 %></span>
+  </div>
+  <div class="span6">
+    <span class="content"><%= @discussion.opencomment %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(@discussion.created_at) %> ago
+    </span>
+  </div>
+</div>
 </ul>

@@ -2,7 +2,9 @@
 <div class="row">
   <h3><%= @gallery.name %> (<%= @gallery.pictographs.count %>) </h3></br>
   <% if @gallery.pictographs.any? %>
-    <%= render @pictographs %>
-    <%= will_paginate @pictographs %>
+    <div class="polaroid">
+      <%= render @pictographs %>
+      <%= will_paginate @pictographs %>
+    </div>
   <% end %>
 </div>
