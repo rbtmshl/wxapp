@@ -406,6 +406,27 @@ select {
   }
 }
 
+.psi {
+  a {
+    color: $deepRed;
+    font-weight: bold;
+  }
+}
+
+.score {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.pos {
+  color: green;
+}
+
+.neg {
+  color: red;
+}
+
 .polaroid {
   position: relative;
 }

@@ -1,5 +1,5 @@
 class PictographsController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :create, :destroy]
+  before_filter :signed_in_user, only: [:new, :create, :destroy, :vote]
   before_filter :correct_user,   only: :destroy
 
   def new
@@ -24,6 +24,14 @@ class PictographsController < ApplicationController
     Pictograph.find(params[:id]).destroy
     redirect_to galleries_path
   end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @pictograph = Pictograph.find(params[:id])
+    @pictograph.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting!"
+  end
+  
 
 
   private

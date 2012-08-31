@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   has_many :forecasts, dependent: :destroy
   has_many :pictographs, dependent: :destroy
   has_many :discussions, dependent: :destroy
+
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
   
 
   before_save { |user| user.email = email.downcase }
@@ -60,6 +62,11 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     relationships.find_by_followed_id(other_user.id).destroy
   end
+
+  def voted_for?(pictograph)
+    evaluations.where(target_type: pictograph.class, target_id: pictograph.id).present?
+  end
+  
   
   private
 

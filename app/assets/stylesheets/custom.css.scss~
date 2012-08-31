@@ -120,7 +120,7 @@ li {
 
 
 body {
-  background: $deepRed;
+  background: yellow;
 }
 
 /*
@@ -406,6 +406,27 @@ select {
   }
 }
 
+.psi {
+  a {
+    color: $deepRed;
+    font-weight: bold;
+  }
+}
+
+.score {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.pos {
+  color: green;
+}
+
+.neg {
+  color: red;
+}
+
 .polaroid {
   position: relative;
 }
@@ -436,7 +457,7 @@ select {
   -webkit-box-shadow: 3px 3px 3px #777;
      -moz-box-shadow: 3px 3px 3px #777;
           box-shadow: 3px 3px 3px #777;
-  margin: 0 0 5px 0;
+  margin: 10px 0 5px 0;
 }
 
 

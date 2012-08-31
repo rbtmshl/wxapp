@@ -14,6 +14,7 @@ Wxapp::Application.routes.draw do
   
   resources :galleries
   resources :pictographs do
+    member { post :vote }
     member do
       get :image
     end

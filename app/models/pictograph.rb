@@ -3,6 +3,7 @@ class Pictograph < ActiveRecord::Base
   belongs_to :user
   belongs_to :gallery
   mount_uploader :image, ImageUploader
+  has_reputation :votes, source: :user, aggregated_by: :sum
 
   validates :user_id, presence: true
   validates :gallery_id, presence: true

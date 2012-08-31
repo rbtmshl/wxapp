@@ -1,3 +1,12 @@
-<% require "mini-magick" %>
-
-<%= link_to (image_tag pictograph.image_url(:thumb).to_s.resize_to_fill(100, 100)), pictograph %>
+<div class="polaroid">
+<p class="score"> 
+<% if (pictograph.reputation_value_for(:votes).to_i > 0)	%>
+  <div class="pos">+<%= pictograph.reputation_value_for(:votes).to_i %></div>
+<% elsif (pictograph.reputation_value_for(:votes).to_i == 0) %>
+   <div>0</div>
+<% else %>
+  <div class="neg"><%= pictograph.reputation_value_for(:votes).to_i %></div>
+<% end %>	      
+</p>
+<%= link_to (image_tag pictograph.image_url(:thumb).to_s), pictograph %>
+</div>
