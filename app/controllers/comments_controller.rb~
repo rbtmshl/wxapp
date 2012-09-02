@@ -1,0 +1,29 @@
+class CommentsController < ApplicationController
+  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :admin_user,   only: :destroy
+  
+  def create
+    @comment = current_user.comments.build(params[:comment])
+    if @comment.save
+      flash[:success] = "Comment uploaded!"
+      redirect_to @comment.subforum
+    else
+      flash[:error] = "Something went awry! Please correct errors and try again"
+      redirect_to forums_path
+    end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to root_path
+  end
+
+  private
+
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end     
+  
+end
+
+

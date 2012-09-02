@@ -10,7 +10,7 @@ class DiscussionsController < ApplicationController
     @discussion = current_user.discussions.build(params[:discussion])
     if @discussion.save
       flash[:success] = "Thread created!"
-      redirect_to @discussion.subforum
+      redirect_to @discussion
     else
       flash[:error] = "Something went awry!"
       redirect_to @discussion.subforum
@@ -19,7 +19,8 @@ class DiscussionsController < ApplicationController
 
   def show
     @discussion = Discussion.find(params[:id])
-    # @discussions = @subforum.discussions.paginate(page: params[:page])
+    @comment = @discussion.comments.build
+    @comments = @discussion.comments.paginate(page: params[:page])
   end
   
   def destroy

@@ -23,6 +23,7 @@ Wxapp::Application.routes.draw do
   resources :forums
   resources :subforums
   resources :discussions
+  resources :comments
   
   root to: 'static_pages#home'
 

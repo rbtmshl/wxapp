@@ -14,6 +14,7 @@ Wxapp::Application.routes.draw do
   
   resources :galleries
   resources :pictographs do
+    member { post :vote }
     member do
       get :image
     end
@@ -22,6 +23,7 @@ Wxapp::Application.routes.draw do
   resources :forums
   resources :subforums
   resources :discussions
+  resources :discussions, :has_many => :comments
   
   root to: 'static_pages#home'
 

@@ -1,0 +1,13 @@
+<a href="<%= user_path(@user) %>">
+  <%= gravatar_for @user, size: 52 %>
+  <h1>
+  <%= @user.name %>
+  </h1>
+</a>
+
+<span>
+  <%= pluralize(@user.microposts.count, "Post") %> | 
+  <%= pluralize(@user.forecasts.count, "Forecast") %>
+</span>
+
+

@@ -2,6 +2,7 @@ class Discussion < ActiveRecord::Base
   attr_accessible :name, :opencomment, :subforum_id, :forum_id
   belongs_to :subforum
   belongs_to :user
+  has_many :comments
 
   validates :user_id, presence: true
   validates :subforum_id, presence: true

@@ -11,6 +11,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
+  attr_protected :admin
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -24,6 +25,8 @@ class User < ActiveRecord::Base
   has_many :discussions, dependent: :destroy
 
   has_many :evaluations, class_name: "RSEvaluation", as: :source
+
+  has_many :comments
   
 
   before_save { |user| user.email = email.downcase }
@@ -31,7 +34,7 @@ class User < ActiveRecord::Base
   
   VALID_USERNAME_REGEX = /^[\w+\.-]+$/
   validates :name, presence: true, 
-	           length: { maximum: 20, minimum: 5 }, 
+	           length: { maximum: 20, minimum: 3 }, 
 		   format: { with: VALID_USERNAME_REGEX },
 		   uniqueness: { case_sensitive: false }
 
