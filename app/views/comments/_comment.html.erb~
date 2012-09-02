@@ -3,13 +3,13 @@
     <div class="span2">
       <span class="user"><%= link_to comment.user.name, comment.user %></span>
     <span class="user"><%= link_to gravatar_for(comment.user), comment.user, size: 52 %></span>
-  </div>
-  <div class="span7">
-    <span class="content"><%= (h(comment.content)) %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(comment.created_at) %> ago
-    </span>
-  </div>  
+    </div>
+    <div class="span7">
+      <span class="content"><%= ((comment.content.html_safe)) %></span>
+      <span class="timestamp">
+        <%= time_ago_in_words(comment.created_at) %> ago
+      </span>
+    </div>  
   </div>
 </li>
 

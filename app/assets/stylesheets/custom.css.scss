@@ -490,6 +490,7 @@ select {
 .content {
   display: block;
   margin-bottom: 5px;
+  word-wrap: break-word;
 }
 .timestamp {
   color: $grayLight;
