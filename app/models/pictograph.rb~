@@ -2,6 +2,10 @@ class Pictograph < ActiveRecord::Base
   attr_accessible :description, :gallery_id, :name, :image
   belongs_to :user
   belongs_to :gallery
+  has_many :piccomments
+  has_reputation :votes, source: :user, aggregated_by: :sum
+
+
   mount_uploader :image, ImageUploader
 
   validates :user_id, presence: true

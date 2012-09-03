@@ -4,7 +4,9 @@ class Comment < ActiveRecord::Base
   belongs_to :discussion
 
   validates :content, presence: true, length: { maximum: 2000 }
- 
+  validates :user_id, presence: true
+  validates :discussion_id, presence: true
+
   default_scope order: 'comments.created_at ASC'
 
 end

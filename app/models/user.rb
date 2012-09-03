@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   has_many :evaluations, class_name: "RSEvaluation", as: :source
 
   has_many :comments
+  has_many :piccomments
   
 
   before_save { |user| user.email = email.downcase }

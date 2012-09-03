@@ -23,7 +23,7 @@ Wxapp::Application.routes.draw do
   resources :forums
   resources :subforums
   resources :discussions
-  resources :discussions, :has_many => :comments
+  resources :comments
   
   root to: 'static_pages#home'
 

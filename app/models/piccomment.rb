@@ -1,0 +1,11 @@
+class Piccomment < ActiveRecord::Base
+  attr_accessible :content, :pictograph_id
+  belongs_to :user
+  belongs_to :pictograph
+
+  validates :content, presence: true, length: { maximum: 240 }
+  validates :user_id, presence: true
+  validates :pictograph_id, presence: true
+
+  default_scope order: 'piccomments.created_at ASC'
+end

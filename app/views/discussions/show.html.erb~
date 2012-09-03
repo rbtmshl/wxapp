@@ -1,4 +1,3 @@
-<h1><%= @discussion.forum.name %> >> <%= @discussion.subforum.name %> >> </h1>
 <h3><%= @discussion.name %></br></br></h3>
 <ul class="subforumlist opencom">
 <div class="row">

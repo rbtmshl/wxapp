@@ -1,0 +1,19 @@
+<%= form_for(@piccomment) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <aside>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Add your comments..." %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :pictograph_id, value: @pictograph.id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>
+</aside>
+
+
+

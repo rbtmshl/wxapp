@@ -10,7 +10,7 @@ class PictographsController < ApplicationController
     @pictograph = current_user.pictographs.build(params[:pictograph])
     if @pictograph.save
       flash[:success] = "Picture Uploaded!"
-      redirect_to @pictograph
+      redirect_to nil
     else
       render 'new'
     end
@@ -18,6 +18,8 @@ class PictographsController < ApplicationController
 
   def show
     @pictograph = Pictograph.find(params[:id])
+    @piccomment = @pictograph.piccomments.build
+    @piccomments = @pictograph.piccomments.paginate(page: params[:page])
   end
 
   def destroy
@@ -28,7 +30,6 @@ class PictographsController < ApplicationController
   def vote
     value = params[:type] == "up" ? 1 : -1
     @pictograph = Pictograph.find(params[:id])
-    @pictograph.add_evaluation(:votes, value, current_user)
     @pictograph.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, notice: "Thank you for voting!"
   end

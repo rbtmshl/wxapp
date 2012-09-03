@@ -9,7 +9,7 @@
     <div class="span3">
       <span class="content"><%= h(feed_item.content) %></span>
       <span class="timestamp">
-        Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+        <%= time_ago_in_words(feed_item.created_at) %> ago
       </span>
       <% if current_user?(feed_item.user) %>
         <%= link_to "delete", feed_item, method: :delete,

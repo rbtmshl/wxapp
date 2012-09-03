@@ -18,6 +18,8 @@ class PictographsController < ApplicationController
 
   def show
     @pictograph = Pictograph.find(params[:id])
+    @piccomment = @pictograph.piccomments.build
+    @piccomments = @pictograph.piccomments.paginate(page: params[:page])
   end
 
   def destroy

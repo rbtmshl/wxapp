@@ -477,19 +477,25 @@ select {
   /* background: #000000; */
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-    &:first-child {
-      border: 0;
-    }
+    border-bottom: 1px solid #e8e8e8;
     &:last-child {
-      border-bottom: 1px solid #e8e8e8;
-      margin-bottom: 40px;
+    margin-bottom: 50px;
     }
   }
 }
+
+.pcc {
+  li {
+    &:first-child {
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+}
+
 .content {
   display: block;
   margin-bottom: 5px;
+  word-wrap: break-word;
 }
 .timestamp {
   color: $grayLight;

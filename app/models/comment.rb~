@@ -2,9 +2,12 @@ class Comment < ActiveRecord::Base
   attr_accessible :content, :discussion_id
   belongs_to :user
   belongs_to :discussion
+  belongs_to :pictograph
 
   validates :content, presence: true, length: { maximum: 2000 }
- 
-  default_scope order: 'comments.created_at DESC'
+  validates :user_id, presence: true
+  validates :discussion_id, presence: true
+
+  default_scope order: 'comments.created_at ASC'
 
 end

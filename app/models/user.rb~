@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_many :discussions, dependent: :destroy
 
   has_many :evaluations, class_name: "RSEvaluation", as: :source
+
+  has_many :comments
   
 
   before_save { |user| user.email = email.downcase }
