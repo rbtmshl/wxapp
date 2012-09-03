@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       redirect_to @comment.discussion
     else
       flash[:error] = "Something went awry! Please correct errors and try again"
-      redirect_to forums_path
+      redirect_to @comment.discussion
     end
   end
 
