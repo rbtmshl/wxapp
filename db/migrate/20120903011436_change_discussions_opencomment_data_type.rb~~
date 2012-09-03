@@ -1,0 +1,13 @@
+class ChangeDiscussionsOpencommentDataType < ActiveRecord::Migration
+  def self.up
+    change_table :discussions do |t|
+      t.change :opencomment, :text, limit: nil
+    end
+  end
+
+  def down
+    change_table :forecasts do |t|
+      t.change :qpf, :float
+    end
+  end
+endd
