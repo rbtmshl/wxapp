@@ -6,8 +6,8 @@ class StaticPagesController < ApplicationController
     temperature_string = doc.xpath("//temperature_string")
     @temperature = temperature_string[0].to_s
     @city = requestion.location.city
-    @lat = requestion.location.lat
-    @lon = requestion.location.lon
+    @lat = requestion.location.latitude
+    @lon = requestion.location.longitude
     if signed_in?
       @micropost  = current_user.microposts.build
       @forecast  = current_user.forecasts.build
