@@ -1,3 +1,5 @@
+<h1><%= @city %>: <%= sanitize @temperature, tags: %w(br), attributes: nil %></h1>
+
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">

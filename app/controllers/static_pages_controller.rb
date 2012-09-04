@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
 
   def home
+    require 'open-uri'
+    doc = Nokogiri::XML(open("http://w1.weather.gov/xml/current_obs/KSEA.xml"))
+    temperature_string = doc.xpath("//temperature_string")
+    @temperature = temperature_string[0].to_s
+    @city = requestion.ip
     if signed_in?
       @micropost  = current_user.microposts.build
       @forecast  = current_user.forecasts.build

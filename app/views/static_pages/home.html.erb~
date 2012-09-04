@@ -1,3 +1,5 @@
+<h1><%= @city.to_s %><%= sanitize @temperature, tags: %w(br), attributes: nil %></h1>
+
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
@@ -22,7 +24,6 @@
     <h2>
       This is the home page for the Weather App!
     </h2>
-    <%= # render 'shared/carousel' %>
     <%= link_to "Sign up now!", signup_path, 
                                 class: "btn btn-large btn-primary" %>
   </div>

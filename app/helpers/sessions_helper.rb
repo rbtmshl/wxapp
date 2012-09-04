@@ -40,7 +40,11 @@ module SessionsHelper
 
   def store_location
     session[:return_to] = request.fullpath
-  end  
+  end 
+
+  def requestion
+    return request
+  end 
     
 end
 
