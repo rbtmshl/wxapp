@@ -53,7 +53,7 @@
   <%= render 'piccomment_form' %>
 <% else %>
   <strong>
-    Please <%= link_to "sign in", signin_path %> to comment. 
+    Please <%= link_to "sign in", signin_path %> to comment 
   </strong>
 <% end %>
     

@@ -1,4 +1,5 @@
-<h3><%= @discussion.name %></br></br></h3>
+<h3 class="linkage"><%= link_to @discussion.subforum.forum.name, @discussion.subforum.forum %> > <%= link_to @discussion.subforum.name, @discussion.subforum %></h3></br>
+<h3><%= @discussion.name %></h3>
 <ul class="subforumlist opencom">
 <div class="row">
   <div class="span2">
@@ -6,7 +7,7 @@
     <span class="user"><%= link_to gravatar_for(@discussion.user), @discussion.user, size: 52 %></span>
   </div>
   <div class="span7">
-    <span class="content"><%= (h(@discussion.opencomment)) %></span>
+    <span class="content"><%= sanitize @discussion.opencomment.gsub(/\n/,"</br>"), tags: %w(br img), attributes: %w(src) %></span>
     <span class="timestamp">
       <%= time_ago_in_words(@discussion.created_at) %> ago
     </span>

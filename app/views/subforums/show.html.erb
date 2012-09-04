@@ -2,6 +2,7 @@
 
 <div class="row">
   <aside class="span6">
+  <h3 class="linkage"><%= link_to "Forums", forums_path %> > <%= link_to @subforum.forum.name, @subforum.forum %></h3></br>
   <h3><%= @subforum.name %> (<%= @subforum.discussions.count.to_s %>) </h3>
   <% if @subforum.discussions.any? %>
     <ul class="subforumlist">

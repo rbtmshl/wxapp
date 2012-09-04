@@ -5,7 +5,7 @@
     <span class="user"><%= link_to gravatar_for(comment.user), comment.user, size: 52 %></span>
     </div>
     <div class="span7">
-      <span class="content"><%= ((comment.content.html_safe)) %></span>
+      <span class="content"><%= sanitize comment.content.gsub(/\n/,"</br>", tags: %w(br img), attributes: %w(src) %></span>
       <span class="timestamp">
         <%= time_ago_in_words(comment.created_at) %> ago
       </span>

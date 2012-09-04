@@ -5,7 +5,7 @@
     <span class="user"><%= link_to gravatar_for(piccomment.user), piccomment.user, size: 52 %></span>
     </div>
     <div class="span7">
-      <span class="content"><%= (h(piccomment.content)) %></span>
+      <span class="content"><%= sanitize piccomment.content.gsub(/\n/,"</br>"), tags: %w(br), attributes: nil %></span>
       <span class="timestamp">
         <%= time_ago_in_words(piccomment.created_at) %> ago
       </span>

@@ -1,1 +1,16 @@
-hi!
+<li>
+  <div class="row">
+    <div class="span2">
+      <span class="user"><%= link_to piccomment.user.name, piccomment.user %></span>
+    <span class="user"><%= link_to gravatar_for(piccomment.user), piccomment.user, size: 52 %></span>
+    </div>
+    <div class="span7">
+      <span class="content"><%= sanitize piccomment.content, tags: %w(br), attributes: nil %></span>
+      <span class="timestamp">
+        <%= time_ago_in_words(piccomment.created_at) %> ago
+      </span>
+    </div>  
+  </div>
+</li>
+
+

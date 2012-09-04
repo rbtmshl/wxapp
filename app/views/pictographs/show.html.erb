@@ -1,7 +1,10 @@
 <li>
 <div class="row">
 <div class="span10">
-  <span class="content"><h3><%= @pictograph.name %></h3></span>
+  <span class="content">
+    <h3 class="linkage"><%= link_to "Pictures", galleries_path %> > <%= link_to @pictograph.gallery.name, @pictograph.gallery %></h3></br>	  
+    <h3><%= @pictograph.name %></h3>
+  </span>
   <span class="content polaroidbig"><%= image_tag @pictograph.image_url.to_s %></span>
   <div class="span7">
     <span class="content"><strong><%= @pictograph.description %></strong></span>
