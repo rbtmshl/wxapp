@@ -1,4 +1,4 @@
-<h1><%= @city %> (<%= @lat %>, <%= @lon %>): <%= sanitize @temperature, tags: %w(br), attributes: nil %></h1>
+<h1><%= @location.city %> (<%= @location.latitude %>, <%= @location.longitude %>): <%= sanitize @temperature, tags: %w(br), attributes: nil %></h1>
 
 <% if signed_in? %>
   <div class="row">
