@@ -5,6 +5,12 @@ class StaticPagesController < ApplicationController
     doc = Nokogiri::XML(open("http://w1.weather.gov/xml/current_obs/KSEA.xml"))
     temperature_string = doc.xpath("//temperature_string")
     @temperature = temperature_string[0].to_s
+    docname = "http://www.geoplugin.net/xml.gp?ip=" + requestion.ip
+    docu = Nokogiri::XML(open(docname))
+    city = docu.xpath("//geoplugin_city")
+    @city = city[0].to_s
+    state = docu.xpath("//geoplugin_region")
+    @state = state[0].to_s
 
     if signed_in?
       @micropost  = current_user.microposts.build
