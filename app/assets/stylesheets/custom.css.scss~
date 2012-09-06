@@ -3,7 +3,7 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-$orange: #FFCC33;
+$orange: #D1C66A;
 $lightAqua: #F0FAFF;
 $deepRed: #801A00;
 
@@ -469,6 +469,9 @@ select {
 
 .linkage {
   color: gray;
+  a {
+    color:gray;
+  }
 }
 
 /* microposts */

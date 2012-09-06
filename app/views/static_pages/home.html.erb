@@ -1,4 +1,4 @@
-<h1><%= sanitize @city, tags: %w(br) %>, <%= sanitize @state, tegs: %w(br) %>: <%= sanitize @temperature, tags: %w(br), attributes: nil %></h1>
+<h1><%= @city %>, <%= @state %>: <%= @curconditions %> <%= @temperature %> &deg;F</h1>
 
 <% if signed_in? %>
   <div class="row">
