@@ -3,7 +3,7 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-$orange: #D1C66A;
+$orange: #FFCC33;
 $lightAqua: #F0FAFF;
 $deepRed: #801A00;
 
@@ -29,7 +29,7 @@ $deepRed: #801A00;
 }
 
 .hero-unit {
-  background: $lightAqua;
+  background: rgba(240, 250, 255, 0.8);
   h1 {
     font-size: 2em;
     letter-spacing: -2px;
@@ -119,8 +119,20 @@ li {
 }
 
 
-body {
-  background: $deepRed;
+html, body {
+  background: #786E50 url(http://www.25eighty.com/wp-content/uploads/2012/01/Portland-Skyline.jpg);
+  /* background: -webkit-gradient(linear, left top, left bottom, from(#8da324), to(#505c0e)); */
+  /* background: -moz-linear-gradient(top, #8da324, #505c0e); */
+  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#9ACD32, endColorstr=#6B8E23); */
+  /* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#9ACD32, endColorstr=#6B8E23)"; */
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
 }
 
 /*
@@ -165,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -529,6 +541,26 @@ aside {
   }
 }
 
+.currentcond {
+  h1 {
+    margin: 0;
+    font-size: 30px;
+  }
 
+  h5 {
+    font-size: 50px;
+    letter-spacing: -2px;
+    text-align: left;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+  background: rgba(0, 1, 18, 0.4);
+  padding: 0px;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: 30px;
+}
 
 

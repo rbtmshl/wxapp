@@ -25,6 +25,7 @@ class StaticPagesController < ApplicationController
     curtemp = doc.xpath('//temperature[@type = "apparent"]/value')
     @temperature = curtemp[0].content
     @curconditions = doc.xpath('//weather-conditions[@weather-summary]').last.values.last.to_s
+    @curconditionspic = doc.xpath('//icon-link').last.content.to_s
     
 
     if signed_in?

@@ -1,5 +1,4 @@
-<h1><%= @city %>, <%= @state %>: <%= @curconditions %> <%= @temperature %> &deg;F</h1>
-
+<%= render 'shared/currentwx' %>
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
@@ -19,7 +18,7 @@
     </div>
   </div>
 <% else %>
-  <div class="center hero-unit">
+  <div class="center">
     <h4>Welcome to the Weather App</h4>
     <h2>
       This is the home page for the Weather App!
