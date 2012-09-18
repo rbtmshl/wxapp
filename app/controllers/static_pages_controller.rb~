@@ -25,8 +25,32 @@ class StaticPagesController < ApplicationController
     curtemp = doc.xpath('//temperature[@type = "apparent"]/value')
     @temperature = curtemp[0].content
     @curconditions = doc.xpath('//weather-conditions[@weather-summary]').last.values.last.to_s
-    @curconditionspic = doc.xpath('//icon-link').last.to_s
-    
+    curconditionspic = doc.xpath('//icon-link').last.content.to_s
+    if (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/few.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/34.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nfew.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/33.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/skc.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/32.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nskc.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/31.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/sct.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/30.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nsct.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/29.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/bkn.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/28.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nbkn.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/27.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/ovc.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/26.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/novc.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/26.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/wind.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/24.png"
+    else
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/25.png"
+    end
 
     if signed_in?
       @micropost  = current_user.microposts.build

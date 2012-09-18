@@ -29,7 +29,7 @@ $deepRed: #801A00;
 }
 
 .hero-unit {
-  background: rgba(240, 250, 255, 0.8);
+  background: rgba(240, 250, 255, 0.9);
   h1 {
     font-size: 2em;
     letter-spacing: -2px;
@@ -120,7 +120,7 @@ li {
 
 
 html, body {
-  background: #786E50 url(http://www.25eighty.com/wp-content/uploads/2012/01/Portland-Skyline.jpg);
+  background: #786E50 url(https://sphotos-b.xx.fbcdn.net/hphotos-snc6/218631_433303310049675_1425441358_o.jpg);
   /* background: -webkit-gradient(linear, left top, left bottom, from(#8da324), to(#505c0e)); */
   /* background: -moz-linear-gradient(top, #8da324, #505c0e); */
   /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#9ACD32, endColorstr=#6B8E23); */

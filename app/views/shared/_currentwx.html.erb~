@@ -2,8 +2,8 @@
   <h1>
     <center>
       <em><%= @city %>, <%= @state %> &emsp;
-      <%= image_tag @curconditionspic, size: "56x56" %></em>
-      <font color="#FFCC33"><%= @temperature %> &deg;F</font>
+      <%= image_tag "http://s.imwx.com/v.20120328.084208//img/wxicon/120/32.png" %></em>
+      <%= @temperature %> &deg;F
     </center>
   </h1>
 </div>
