@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
     docu = Nokogiri::XML(open(docname))
     city = docu.xpath("//geoplugin_city")
     country = docu.xpath("//geoplugin_countryName")
-    if ((city[0].content.length < 2) || (country[0].content.to_s != "United States") )
+    if ((city[0].content.length < 2)) # || (country[0].content.to_s != "United States") )
       @city = "Portland, OR"
       @state = "OR"
       @lat = "45.58"

@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
 
   def home
-   if show_cwx(yield(:cwx))
     require 'open-uri'
     docname = "http://www.geoplugin.net/xml.gp?ip=" + request.ip
     docu = Nokogiri::XML(open(docname))
@@ -65,7 +64,7 @@ class StaticPagesController < ApplicationController
     else
       @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/25.png"
     end
-   end
+
     if signed_in?
       @micropost  = current_user.microposts.build
       @forecast  = current_user.forecasts.build
