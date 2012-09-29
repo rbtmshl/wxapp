@@ -5,7 +5,7 @@ class ChangeDiscussionsOpencommentDataType < ActiveRecord::Migration
   end
 
   def down
-    change_column(:discussions, :opencomment, :string)
     add_index :discussions, [:forum_id, :subforum_id, :updated_at]
+    change_column(:discussions, :opencomment, :string)
   end
 end
