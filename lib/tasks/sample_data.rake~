@@ -8,6 +8,7 @@ namespace :db do
     make_galleries
     make_forums
     make_subforums
+    make_cities
   end
 end
 
