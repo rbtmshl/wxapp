@@ -15,6 +15,9 @@
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+      <% if show_cwx(yield(:cwx)) %>
+        <h1>HI!</h1>
+      <% end %>	
       <div class="hero-unit">
 	      <%= yield %>
       </div>

@@ -1,4 +1,6 @@
-<%= render 'shared/currentwx' %>
+<% provide(:cwx, true) %>
+
+<h1><%= @requestor %></h1>
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">

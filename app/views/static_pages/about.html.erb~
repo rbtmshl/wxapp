@@ -1,14 +1,6 @@
 <% provide(:title, 'About Us') %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Weather App | <% = yield(:title) %></title>
-  </head>
-  <body>
-    <h1>About Us</h1>
-    <p>
-      The Weather App does cool stuff...
-    </p>
-  </body>
-</html>
-
+<% provide(:cwx, true) %>
+<h1>About Us</h1>
+<p>
+  The Weather App does cool stuff...
+</p>

@@ -2,17 +2,18 @@ class StaticPagesController < ApplicationController
 
   def home
     require 'open-uri'
-    docname = "http://www.geoplugin.net/xml.gp?ip=" + requestion.ip
+    docname = "http://www.geoplugin.net/xml.gp?ip=" + request.ip
     docu = Nokogiri::XML(open(docname))
     city = docu.xpath("//geoplugin_city")
-    if (city[0].content.length < 2)
-      @city = "Portland"
+    country = docu.xpath("//geoplugin_countryName")
+    if ((city[0].content.length < 2) || (country[0].content.to_s != "United States") )
+      @city = "Portland, OR"
       @state = "OR"
       @lat = "45.58"
       @lon = "-122.6"
     else
       @city = city[0].content
-      state = docu.xpath("//geoplugin_region")
+      state = docu.xpath("//geoplugin_region") + ", " + state[0].content
       @state = state[0].content
       lat = docu.xpath("//geoplugin_latitude")
       @lat = lat[0].content
@@ -50,6 +51,16 @@ class StaticPagesController < ApplicationController
       @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/24.png"
     elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nwind.png")
       @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/24.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/fg.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/20.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nfg.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/20.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/smoke.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/19.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/fzra.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/ip.png")
+      @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
     else
       @curconditionspic = "http://s.imwx.com/v.20120328.084208//img/wxicon/120/25.png"
     end
