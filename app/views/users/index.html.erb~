@@ -1,5 +1,8 @@
 <% provide(:title, 'All Users') %>
-<h1>All Users (<%= @users.all.count.to_s %>) </h1>
+
+<%= collection_select(:city, :id, City.all, :id, :name, options = { prompt: "-Select a City-"}, { class: "chzn-select" })%>
+
+<h1>All Users (<%= User.all.count.to_s %>) </h1>
 
 <%= will_paginate %>
 
@@ -8,4 +11,8 @@
 </ul>
 
 <%= will_paginate %>
+
+<script>
+  $(".chzn-select").chosen();
+</script>
 

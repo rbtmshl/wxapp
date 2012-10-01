@@ -1,14 +1,13 @@
 <% provide(:cwx, true) %>
 
-<%= render 'shared/currentwx' %>
-<h1><%= @requestor %></h1>
 <% if signed_in? %>
   <div class="row">
+  <div class="userinfostuff">
+    <%= render 'shared/user_info' %>
+  </div>
+  </div>
+  <div class="row">
     <aside class="span4">
-      <section class="userinfostuff">
-        <%= render 'shared/user_info' %>
-        <%= render 'shared/stats' %>
-      </section>
       <section class="formy">
         <%= render 'shared/forecast_form' %>
       </section>
@@ -31,4 +30,3 @@
   </div>
 
 <% end %> 
-

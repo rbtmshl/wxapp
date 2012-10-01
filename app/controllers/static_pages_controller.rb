@@ -7,13 +7,13 @@ class StaticPagesController < ApplicationController
     city = docu.xpath("//geoplugin_city")
     country = docu.xpath("//geoplugin_countryName")
     if ((city[0].content.length < 2) || (country[0].content.to_s != "United States") )
-      @city = "Portland, OR"
+      @cityy = "Portland, OR"
       @state = "OR"
       @lat = "45.58"
       @lon = "-122.6"
     else
       state = docu.xpath("//geoplugin_region")
-      @city = city[0].content + ", " + state[0].content
+      @cityy = city[0].content + ", " + state[0].content
       lat = docu.xpath("//geoplugin_latitude")
       @lat = lat[0].content
       lon = docu.xpath("//geoplugin_longitude")
@@ -79,5 +79,15 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+  end
+
+  def weatherate
+    @selcity = params[:city][:id]
+    if (@selcity == "") 
+      redirect_to :back
+      flash[:error] = "You're doing it wrong!"
+    else
+      redirect_to City.find(@selcity)
+    end
   end
 end

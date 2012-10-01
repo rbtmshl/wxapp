@@ -1,10 +1,17 @@
 <div class="hero-unit currentcond">
   <h1>
     <center>
-      <em><%= @city %> (<%= @lat %>, <%= @lon %>) &emsp;
+      <em><%= @cityy %> &emsp;
       <%= image_tag @curconditionspic %></em>
       <%= @temperature %> &deg;F
+        <span class="span3">
+    <%= collection_select(:city, :id, City.all, :id, :name, options = { prompt: "-Select a City-"}, { class: "chzn-select" })%>
+  </span>
     </center>
   </h1>
+
 </div>
 
+<script>
+  $(".chzn-select").chosen();
+</script>

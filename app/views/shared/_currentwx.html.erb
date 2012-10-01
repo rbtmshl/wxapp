@@ -1,10 +1,14 @@
 <div class="hero-unit currentcond">
   <h1>
     <center>
-      <em><%= @city %> &emsp;
+      <em><%= @cityy %> &emsp;
       <%= image_tag @curconditionspic %></em>
       <%= @temperature %> &deg;F
     </center>
   </h1>
+
 </div>
 
+<script>
+  $(".chzn-select").chosen();
+</script>

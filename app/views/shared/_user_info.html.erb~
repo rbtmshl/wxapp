@@ -5,8 +5,3 @@
   </h1>
 </a>
 
-<span>
-  <%= pluralize(current_user.microposts.count, "Post") %> 
-  <%= pluralize(current_user.forecasts.count, "Forecast") %>
-</span>
-

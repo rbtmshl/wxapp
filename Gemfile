@@ -15,6 +15,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "fog", "~> 1.3.1"
 gem 'activerecord-reputation-system', require: 'reputation_system'
+gem 'chosen-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

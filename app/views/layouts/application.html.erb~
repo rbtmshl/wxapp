@@ -10,13 +10,13 @@
     <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>    
   </head>
   <body>
-    <%= render 'layouts/header' %>
+	  <%= render 'layouts/header' %></br></br>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <% if show_cwx(yield(:cwx)) %>
-        <h1>HI!</h1>
+        <%= render 'shared/currentwx' %>
       <% end %>	
       <div class="hero-unit">
 	      <%= yield %>

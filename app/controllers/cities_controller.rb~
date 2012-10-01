@@ -16,7 +16,7 @@ class CitiesController < ApplicationController
 
   def show
     @place = City.find(params[:id])
-    @cityy = @place.name
+    @city = @place.name
     @state = @place.state
     @lat = @place.lat
     @lon = @place.lon
