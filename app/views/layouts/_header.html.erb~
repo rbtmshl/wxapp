@@ -27,8 +27,8 @@
           <% end %>
 	  <li>
             <%= form_tag("/weatherate", method: "get", class: "form-search") do %>
-              <%= collection_select(:city, :id, City.all, :id, :name, options = { prompt: "-Select City-"}, { class: "chzn-select span2 search-query" })%>
-              <%= submit_tag("Go!", class: "btn btn-small btn-primary") %>
+              <%= collection_select(:city, :id, City.all, :id, :name, options = { prompt: "-Select City-"}, { class: "chzn-select search-query" })%>
+              <%= submit_tag("Go", class: "icon-circle-arrow-right") %>
             <% end %>
           </li>
         </ul>

@@ -10,7 +10,7 @@ module ApplicationHelper
     end
   end
 
-  def show_cwx?(boo)
+  def show_cwx(boo)
     if boo.empty?
       return false
     else

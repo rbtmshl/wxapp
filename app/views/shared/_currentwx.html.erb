@@ -1,14 +1,51 @@
 <div class="hero-unit currentcond">
-  <h1>
+<div id="accordion2" class="accordion">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                    <h1>
     <center>
       <em><%= @cityy %> &emsp;
       <%= image_tag @curconditionspic %></em>
       <%= @temperature %> &deg;F
     </center>
   </h1>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapseOne" style="height: 0px;">
+                <div class="accordion-inner">
+			<h1>Today: Hi <%= @hi_temp[0].content %> / Lo <%= @lo_temp[0].content %></h1>
+			<h1><%= Date::DAYNAMES[Date.today().tomorrow().wday()] %>: Hi <%= @hi_temp[1].content %> / Lo <%= @lo_temp[1].content %></h1>
+			<h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[2].content %> / Lo <%= @lo_temp[2].content %></h1>
+			<h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[3].content %> / Lo <%= @lo_temp[3].content %></h1>
+			<h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[4].content %> / Lo <%= @lo_temp[4].content %></h1>
+                </div>
+              </div>
+            </div>
+          </div>  
 
 </div>
 
 <script>
   $(".chzn-select").chosen();
 </script>
+
+<script>
+$(function() {
+    $('#accordion2').on('mouseenter.collapse.data-api', '[data-toggle=collapse]', function(e) {
+        var $this = $(this),
+            href, target = $this.attr('data-target') || e.preventDefault() || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+            ,
+            option = $(target).data('collapse') ? 'show' : $this.data()
+            $(target).collapse(option)
+    })
+    $('#accordion2').on('mouseleave.collapse.data-api', '[data-toggle=collapse]', function(e) {
+        var $this = $(this),
+            href, target = $this.attr('data-target') || e.preventDefault() || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+            ,
+            option = $(target).data('collapse') ? 'hide' : $this.data()
+            $(target).collapse(option)
+    })
+    
+})
+</script>	

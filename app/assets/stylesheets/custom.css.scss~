@@ -13,6 +13,18 @@ $deepRed: #801A00;
   box-sizing: border-box;
 }
 
+.accordion-group {
+  border: 0;
+}
+
+.accordion-inner {
+  border: 0;
+  border-top: 1px;
+  border-style: dotted;
+  border-color: $grayLight;
+  border-top-width: 100px;
+}
+
 
 /* universal */
 
@@ -102,7 +114,7 @@ li {
   margin-top: 5px;
   margin-bottom: 0;
   select {
-    width: 200px;
+    width: 150px;
   }
   .btn {
     margin-top: -3px;
@@ -574,6 +586,10 @@ aside {
 }
 
 .currentcond {
+  a {
+    text-decoration: none;
+  }
+
   h1 {
     margin: 0;
     font-size: 30px;

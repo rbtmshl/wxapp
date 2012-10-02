@@ -1,0 +1,42 @@
+module StaticPagesHelper
+
+  def weather_icon(curconditionspic)
+    if (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/few.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/34.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nfew.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/33.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/skc.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/32.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nskc.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/31.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/sct.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/30.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nsct.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/29.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/bkn.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/28.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nbkn.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/27.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/ovc.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/26.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/novc.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/26.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/wind.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/24.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nwind.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/24.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/fg.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/20.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/nfg.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/20.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/smoke.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/19.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/fzra.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
+    elsif (curconditionspic == "http://forecast.weather.gov/images/wtf/medium/ip.png")
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
+    else
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/25.png"
+    end
+  end
+end

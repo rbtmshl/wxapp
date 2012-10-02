@@ -1,13 +1,6 @@
 <% provide(:cwx, true) %>
 
 <h1>This is the page for <%= @cityy %>!</h1>
-</br></br>
-  <span class="span3">
-    <%= form_tag("/weatherate", method: "get") do %>
-      <%= collection_select(:city, :id, City.all, :id, :name, options = { prompt: "-Select a City-"}, { class: "chzn-select" })%>
-      <%= submit_tag("Go") %>
-    <% end %>
-  </span>
 <%
 #<div class="accordion" id="accordion2">
  # <div class="accordion-group">
@@ -25,6 +18,4 @@
 #</div>
 %>
 
-<script>
-  $(".chzn-select").chosen();
-</script>
+
