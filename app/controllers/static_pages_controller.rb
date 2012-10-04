@@ -36,6 +36,11 @@ class StaticPagesController < ApplicationController
     @hi_temp = hi_temp
     lo_temp = doc.xpath('//temperature[@type = "minimum"]/value')
     @lo_temp = lo_temp
+        icons = doc.xpath('//conditions-icon[@type = "forecast-NWS"]/icon-link')
+    @icons = ["",""]
+    (0..icons.length-1).each do |i|
+      @icons[i] = weather_icon_small(icons[i].content)
+    end
 
 
     if signed_in?
@@ -102,6 +107,46 @@ class StaticPagesController < ApplicationController
       return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
     else
       return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/25.png"
+    end
+  end
+
+  def weather_icon_small(iconlink)
+    if (iconlink == "http://forecast.weather.gov/images/wtf/medium/few.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/34.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/nfew.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/33.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/skc.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/32.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/nskc.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/31.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/sct.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/30.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/nsct.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/29.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/bkn.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/28.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/nbkn.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/27.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/ovc.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/26.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/novc.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/26.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/wind.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/24.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/nwind.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/24.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/fg.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/20.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/nfg.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/20.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/smoke.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/19.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/fzra.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/8.png"
+    elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/ip.png")
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/8.png"
+    else
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/25.png"
     end
   end
 end
