@@ -1,0 +1,6 @@
+<h1><em>Tomorrow</em> &emsp; <%= image_tag @icons[1] %> <%= @hi_temp[0].content %> &deg;F / <%= @lo_temp[0].content %> &deg;F </h1>
+<h1><em><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().wday()] %></em> &emsp; <%= image_tag @icons[3] %> <%= @hi_temp[1].content %> / <%= @lo_temp[1].content %></h1>
+<h1><em><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().wday()] %></em> &emsp; <%= image_tag @icons[5] %> <%= @hi_temp[2].content %> / <%= @lo_temp[2].content %></h1>
+<h1><em><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %></em> &emsp; <%= image_tag @icons[7] %> <%= @hi_temp[3].content %> / <%= @lo_temp[3].content %></h1>
+<h1><em><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %></em> &emsp; <%= image_tag @icons[9] %> <%= @hi_temp[4].content %> / <%= @lo_temp[4].content %></h1>
+

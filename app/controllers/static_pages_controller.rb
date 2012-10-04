@@ -32,8 +32,6 @@ class StaticPagesController < ApplicationController
     @curconditionspic = weather_icon(curconditionspic)
 
     # Get forecast for user's location
-    doc_string = "http://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?listLatLon=" + @lat + "," + @lon + "&format=24+hourly&numDays=7"
-    doc = Nokogiri::XML(open(doc_string))
     hi_temp = doc.xpath('//temperature[@type = "maximum"]/value')
     @hi_temp = hi_temp
     lo_temp = doc.xpath('//temperature[@type = "minimum"]/value')

@@ -13,11 +13,17 @@
                 </a>
               </div>
               <div class="accordion-body collapse" id="collapseOne" style="height: 0px;">
-                <div class="accordion-inner">
-			<h1>Today: Hi <%= @hi_temp[0].content %> / Lo <%= @lo_temp[0].content %></h1>
-			<h1><%= Date::DAYNAMES[Date.today().tomorrow().wday()] %>: Hi <%= @hi_temp[1].content %> / Lo <%= @lo_temp[1].content %></h1>
-			<h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[2].content %> / Lo <%= @lo_temp[2].content %></h1>
-			<h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[2].content %> / Lo <%= @lo_temp[2].content %></h1>
+  	      <div class="accordion-inner">
+                  <% if (@lo_temp.length == 6) %>
+ 		    <%= render 'shared/cityforecast' %>
+                  <% else %>
+		    <h1>Tomorrow: Hi <%= @hi_temp[0].content %> / Lo <%= @lo_temp[0].content %></h1>
+		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[1].content %> / Lo <%= @lo_temp[1].content %></h1>
+		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[2].content %> / Lo <%= @lo_temp[2].content %></h1>
+		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[3].content %> / Lo <%= @lo_temp[3].content %></h1>
+  		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[4].content %> / Lo <%= @lo_temp[4].content %></h1>
+                  <% end %>
+		  
                 </div>
               </div>
             </div>
