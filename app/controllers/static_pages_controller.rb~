@@ -36,6 +36,12 @@ class StaticPagesController < ApplicationController
     @hi_temp = hi_temp
     lo_temp = doc.xpath('//temperature[@type = "minimum"]/value')
     @lo_temp = lo_temp
+        icons = doc.xpath('//conditions-icon[@type = "forecast-NWS"]/icon-link')
+    @icons = ["",""]
+    (0..icons.length-1).each do |i|
+      @icons[i] = weather_icon_small(icons[i].content)
+    end
+    @day = doc.xpath('//time-layout/start-valid-time/@period-name')
 
 
     if signed_in?

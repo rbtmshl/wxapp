@@ -3,7 +3,7 @@
   <h1><%= @day[0].content %></br><%= image_tag @icons[0] %></br><%= @hi_temp[0].content %></h1>
 </div>
 
-<% (1..@forecastdays).each do |i| %>
+<% (1..4).each do |i| %>
 <div class="fortcast span2">
   <h1><%= @day[2*i].content %></br><%= image_tag @icons[2*i] %></br><%= @hi_temp[i].content %> / <%= @lo_temp[i-1].content %></h1>
 </div>

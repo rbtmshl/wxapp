@@ -20,12 +20,19 @@ class CitiesController < ApplicationController
     @state = @place.state
     @lat = @place.lat
     @lon = @place.lon
+    @forecastdays = 4
     doc_string = "http://forecast.weather.gov/MapClick.php?lat="+ @lat +"&lon="+ @lon +"&FcstType=dwml"
     doc = Nokogiri::XML(open(doc_string))
     curtemp = doc.xpath('//temperature[@type = "apparent"]/value')
-    @temperature = curtemp[0].content
-    @curconditions = doc.xpath('//weather-conditions[@weather-summary]').last.values.last.to_s
-    curconditionspic = doc.xpath('//icon-link').last.content.to_s
+    @temperature = nil
+    @temperature = curtemp[0].content unless curtemp[0].nil?
+    if @temperature.nil?
+      curtemp = doc.xpath('//temperature[@type = "air"]/value')
+      @temperature = curtemp[0].content unless curtemp[0].nil?
+      @forecastdays = 3;
+    end
+    # @curconditions = doc.xpath('//weather-conditions[@weather-summary]').last.values.last.to_s
+    curconditionspic = doc.xpath('//icon-link').last.content.to_s unless doc.xpath('//icon-link').last.nil?
     @curconditionspic = weather_icon(curconditionspic)
     hi_temp = doc.xpath('//temperature[@type = "maximum"]/value')
     @hi_temp = hi_temp
@@ -36,6 +43,13 @@ class CitiesController < ApplicationController
     (0..icons.length-1).each do |i|
       @icons[i] = weather_icon_small(icons[i].content)
     end
+    @day = doc.xpath('//time-layout/start-valid-time/@period-name')
+
+    # observation site info
+    @osname = doc.xpath('//data[@type = "current observations"]/location/area-description').first.content
+    @oslat = doc.xpath('//data[@type = "current observations"]/location/point/@latitude').first.content
+    @oslon = doc.xpath('//data[@type = "current observations"]/location/point/@longitude').first.content
+    @oselevation = doc.xpath('//data[@type = "current observations"]/location/height').first.content
   end
 
   def destroy

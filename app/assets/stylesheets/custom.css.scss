@@ -120,7 +120,6 @@ li {
   }
 }
 
-
 .usercast {
   h4 {
     font-size: 1.2em;
@@ -604,10 +603,33 @@ aside {
   img {
     vertical-align: middle;
   }
-  background: rgba(0, 1, 18, 0.7);
+  background: rgba(0, 1, 18, 0.6);
   padding: 0px;
   margin-bottom: 20px;
   margin-top: 0;
+}
+
+.fortcast {
+  border-radius: 5px;
+  background: rgba(0, 1, 18, 0.8);
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  width: 16%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-right: -10px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  img {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+}
+
+.fork {
+  margin-left: 9%;
 }
 
 

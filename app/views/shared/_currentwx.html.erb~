@@ -14,14 +14,10 @@
               </div>
               <div class="accordion-body collapse" id="collapseOne" style="height: 0px;">
   	      <div class="accordion-inner">
-                  <% if (@lo_temp.length == 6) %>
+                  <% if (!(@day[0].content == "Overnight") || !(@day[0].content == "Tonight")) %>
  		    <%= render 'shared/cityforecast' %>
                   <% else %>
-		    <h1>Tomorrow: Hi <%= @hi_temp[0].content %> / Lo <%= @lo_temp[0].content %></h1>
-		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[1].content %> / Lo <%= @lo_temp[1].content %></h1>
-		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[2].content %> / Lo <%= @lo_temp[2].content %></h1>
-		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[3].content %> / Lo <%= @lo_temp[3].content %></h1>
-  		    <h1><%= Date::DAYNAMES[Date.today().tomorrow().tomorrow().tomorrow().tomorrow().tomorrow().wday()] %>: Hi <%= @hi_temp[4].content %> / Lo <%= @lo_temp[4].content %></h1>
+		    <%= render 'shared/cityforecast1' %>
                   <% end %>
 		  
                 </div>

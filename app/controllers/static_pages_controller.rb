@@ -23,12 +23,19 @@ class StaticPagesController < ApplicationController
     end
 
     # Get current conditions for user's location
+     @forecastdays = 4
     doc_string = "http://forecast.weather.gov/MapClick.php?lat="+ @lat +"&lon="+ @lon +"&FcstType=dwml"
     doc = Nokogiri::XML(open(doc_string))
     curtemp = doc.xpath('//temperature[@type = "apparent"]/value')
-    @temperature = curtemp[0].content
-    @curconditions = doc.xpath('//weather-conditions[@weather-summary]').last.values.last.to_s
-    curconditionspic = doc.xpath('//icon-link').last.content.to_s
+    @temperature = nil
+    @temperature = curtemp[0].content unless curtemp[0].nil?
+    if @temperature.nil?
+      curtemp = doc.xpath('//temperature[@type = "air"]/value')
+      @temperature = curtemp[0].content unless curtemp[0].nil?
+      @forecastdays = 3;
+    end
+    # @curconditions = doc.xpath('//weather-conditions[@weather-summary]').last.values.last.to_s
+    curconditionspic = doc.xpath('//icon-link').last.content.to_s unless doc.xpath('//icon-link').last.nil?
     @curconditionspic = weather_icon(curconditionspic)
 
     # Get forecast for user's location
@@ -36,11 +43,12 @@ class StaticPagesController < ApplicationController
     @hi_temp = hi_temp
     lo_temp = doc.xpath('//temperature[@type = "minimum"]/value')
     @lo_temp = lo_temp
-        icons = doc.xpath('//conditions-icon[@type = "forecast-NWS"]/icon-link')
+    icons = doc.xpath('//conditions-icon[@type = "forecast-NWS"]/icon-link')
     @icons = ["",""]
     (0..icons.length-1).each do |i|
       @icons[i] = weather_icon_small(icons[i].content)
     end
+    @day = doc.xpath('//time-layout/start-valid-time/@period-name')
 
 
     if signed_in?
