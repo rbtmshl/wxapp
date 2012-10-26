@@ -1,0 +1,5 @@
+<% provide(:cwx, true) unless @temperature.nil? %>
+
+<h1><%= @cityy %> (<%= @lat %>, <%= @lon %>)</h1>
+<p><%= @osname %> (<%= @oslat %>,<%= @oslon %>)</p>
+<p>Elevation: <%= @oselevation %> ft</p>

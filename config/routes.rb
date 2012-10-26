@@ -26,6 +26,7 @@ Wxapp::Application.routes.draw do
   resources :comments
   resources :piccomments
   resources :cities
+  resources :stations
   
   root to: 'static_pages#home'
 
