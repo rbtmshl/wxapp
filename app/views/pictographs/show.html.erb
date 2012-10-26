@@ -24,12 +24,12 @@
   </div>
   <div class="span2">
     <span class="content center score">
-      <% if (@pictograph.reputation_value_for(:votes).to_i > 0)	%>
-        <div class="pos">+<%= @pictograph.reputation_value_for(:votes).to_i %></div>
-      <% elsif (@pictograph.reputation_value_for(:votes).to_i == 0) %>
+      <% if (@pictograph.reputation_for(:votes).to_i > 0)	%>
+        <div class="pos">+<%= @pictograph.reputation_for(:votes).to_i %></div>
+      <% elsif (@pictograph.reputation_for(:votes).to_i == 0) %>
         <div>0</div>
       <% else %>
-        <div class="neg"><%= @pictograph.reputation_value_for(:votes).to_i %></div>
+        <div class="neg"><%= @pictograph.reputation_for(:votes).to_i %></div>
       <% end %>	      
     </span>
     
