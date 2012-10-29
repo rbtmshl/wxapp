@@ -92,6 +92,8 @@ class CitiesController < ApplicationController
       return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
     elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/ip.png")
       return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/8.png"
+    elsif ((iconlink == "http://forecast.weather.gov/images/wtf/medium/shra.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra1.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/nra.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra100.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra90.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra80.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/shra80.png"))
+      return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/12.png"
     else
       return "http://s.imwx.com/v.20120328.084208//img/wxicon/120/25.png"
     end
@@ -132,6 +134,8 @@ class CitiesController < ApplicationController
       return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/8.png"
     elsif (iconlink == "http://forecast.weather.gov/images/wtf/medium/ip.png")
       return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/8.png"
+    elsif ((iconlink == "http://forecast.weather.gov/images/wtf/medium/shra.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra1.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/nra.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra100.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra90.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/ra80.png") || (iconlink == "http://forecast.weather.gov/images/wtf/medium/shra80.png"))
+      return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/12.png"
     else
       return "http://s.imwx.com/v.20120328.084252/img/wxicon/70/25.png"
     end
